@@ -76,9 +76,9 @@
 			<?php
 				if ( isset ($_GET['P'])  )
 				{
-					if ( file_exists ("view/" + $_GET['P']) )
+					if ( file_exists ("view/" . $_GET['P']) or file_exists ("view\\" . $_GET['P']) )
 					{
-						require_once ("view/" + $_GET['P']);
+						require_once ("view/" . $_GET['P']);
 					}
 					else
 					{

@@ -1,5 +1,10 @@
 body {
   height: 100%;
+  background: url('../img/global/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 body .navbar-default {
   background-color: #4b58f5;
@@ -57,8 +62,12 @@ body .navbar-default .navbar-link {
 body .navbar-default .navbar-link:hover {
   color: #ffffff;
 }
+body h2 {
+  color: white;
+}
 body footer {
   bottom: 0;
+  left: 0;
   padding-top: 10px;
   position: fixed !important;
   background-color: #3065a0;

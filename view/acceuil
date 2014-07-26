@@ -1,1 +1,13 @@
-acc
+<div class="col-sm-6">
+	<h2>Bienvenue sur le site du club!</h2>
+	<div class="alert alert-info alert-dismissible col-sm-10" role="alert">
+  		<button type="button" class="close" data-dismiss="alert">
+  			<span aria-hidden="true">&times;</span>
+  			<span class="sr-only">Fermer</span>
+  		</button>
+	  <strong>Exceptionnel!</strong> Le club viens de fêter ses 85 ans !
+	</div>
+</div>
+<div class="col-sm-6 hidden-xs" >
+	<img class="col-sm-6 col-sm-offset-3" src="img/global/logo-l.png">
+</div>
