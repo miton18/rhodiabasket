@@ -64,10 +64,10 @@
 								</a>
 								<ul class="dropdown-menu" role="menu" >
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Masculin</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=plan&amp;T=M">Masculin</a>
   									</li>
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Féminin</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=planM&amp;T=F">Féminin</a>
   									</li>
   								</ul>
 							</li>
@@ -77,10 +77,10 @@
 								</a>
 								<ul class="dropdown-menu" role="menu" >
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Masculin</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=planE&amp;T=M">Masculin</a>
   									</li>
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Féminin</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=planE&amp;T=F">Féminin</a>
   									</li>
   								</ul>
 							</li>
@@ -89,10 +89,10 @@
 								</a>
 								<ul class="dropdown-menu" role="menu" >
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Le bureau</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=equipe&amp;T=B">Le bureau</a>
   									</li>
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Les entraineurs</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=equipe&amp;T=E">Les entraineurs</a>
   									</li>
   								</ul>
 							</li>
@@ -102,10 +102,10 @@
 								</a>
 								<ul class="dropdown-menu" role="menu" >
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Masculin</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=gal&amp;T=M">Masculin</a>
   									</li>
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="#">Féminin</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=gal&amp;T=F">Féminin</a>
   									</li>
   								</ul>
 							</li>
@@ -144,7 +144,7 @@
 			<div class="container-fluid">
 				<p class="muted credit text-center">
 					RhodiaBasket, site officiel du club de basket du rhodia, créé par 
-					<a href="http://remi.rcdinfo.fr">Collignon Rémi</a>
+					<a href="http://remi.rcdinfo.fr" target="_blank">Collignon Rémi</a>
 				</p>
 			</footer>
 		</div>
@@ -167,14 +167,6 @@
 			$(function(){ 
 				$( "#" + $.urlParam('P') ).parent().addClass("active");
 			});
-
-		      window.fbAsyncInit = function() {
-		        FB.init({
-		          appId      : '{your-app-id}',
-		          xfbml      : true,
-		          version    : 'v2.0'
-		        });
-		      };
 		</script>
 	</body>
 </html>
