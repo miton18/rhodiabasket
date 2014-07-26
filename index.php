@@ -51,20 +51,69 @@
 						</button>
 						<a class="navbar-brand" id="acceuil" href="index.php">
 							<span id="brand">
-								<img src="img/global/logo-s.png">RhodiaClub Basket
+								<img src="img/global/logo-s.png"> RhodiaClub Basket
 							</span>
 						</a>
 					</div>
 					<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
+							<li><a href="index.php">Accueil</a></li>
 							<li>
-								<a id="plan" href="index.php?P=plan">Planning des matchs</a>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Planning des matchs 
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" role="menu" >
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Masculin</a>
+  									</li>
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Féminin</a>
+  									</li>
+  								</ul>
 							</li>
 							<li>
-								<a id="equipe" href="index.php?P=equipe">Equipe</a>
+								<a class="dropdown-toggle"  data-toggle="dropdown" href="#">Planning entrainements 
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" role="menu" >
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Masculin</a>
+  									</li>
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Féminin</a>
+  									</li>
+  								</ul>
+							</li>
+							<li><a class="dropdown-toggle"  data-toggle="dropdown" href="#">Encadrement 
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" role="menu" >
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Le bureau</a>
+  									</li>
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Les entraineurs</a>
+  									</li>
+  								</ul>
+							</li>
+							<li>
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallerie
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" role="menu" >
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Masculin</a>
+  									</li>
+  									<li role="presentation">
+  										<a role="menuitem" tabindex="-1" href="#">Féminin</a>
+  									</li>
+  								</ul>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="#">Newsletter</a>
+							</li>
 							<li>
 								<a id="contact" href="index.php?P=contact">Contact</a>
 							</li>

@@ -11,3 +11,9 @@
 <div class="col-sm-6 hidden-xs" >
 	<img class="col-sm-6 col-sm-offset-3" src="img/global/logo-l.png">
 </div>
+<div class="row">
+	<ul>
+		<li>Planning des matches</li>
+		<li>Equipe<li>
+	</ul>  
+</div>
