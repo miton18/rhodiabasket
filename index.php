@@ -91,12 +91,32 @@
 				}
 			?>	
 		</div>
+		<footer class="col-sm-12">
+			<div class="container-fluid">
+				<p class="muted credit text-center">
+					RhodiaBasket, site officiel du club de basket du rhodia, créé par 
+					<a href="http://remi.rcdinfo.fr">Collignon Rémi</a>
+				</p>
+			</footer>
+		</div>
 		<script type="text/javascript" src="jquery.min.js"  ></script>
-		<script type="text/javascript" src="bootstrap.min.js"></script>		
+		<script type="text/javascript" src="bootstrap.min.js"></script>	
 		<script type="text/javascript">
-			$(function(){
-				var page = "<?= $_GET['P']?>";	  
-				$("#" + page).parent().addClass("active");
+			$.urlParam = function(sParam){
+			    var sPageURL = window.location.search.substring(1);
+			    var sURLVariables = sPageURL.split('&');
+			    for (var i = 0; i < sURLVariables.length; i++)
+			    {
+			        var sParameterName = sURLVariables[i].split('=');
+			        if (sParameterName[0] == sParam)
+			        {
+			            return sParameterName[1];
+			        }
+			    }
+			}
+
+			$(function(){ 
+				$( "#" + $.urlParam('P') ).parent().addClass("active");
 			});
 		</script>
 	</body>

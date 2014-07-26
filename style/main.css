@@ -1,3 +1,6 @@
+body {
+  height: 100%;
+}
 body .navbar-default {
   background-color: #4b58f5;
   border-color: #2113ca;
@@ -54,7 +57,18 @@ body .navbar-default .navbar-link {
 body .navbar-default .navbar-link:hover {
   color: #ffffff;
 }
+body footer {
+  bottom: 0;
+  padding-top: 10px;
+  position: fixed !important;
+  background-color: #3065a0;
+  color: white;
+}
 @media (max-width: 767px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
   body .container {
     padding: 0;
   }

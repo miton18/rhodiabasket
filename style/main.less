@@ -6,6 +6,7 @@
 @colHighlight   : #ffffff;
 body
 {
+	height : 100%;
 	.navbar-default 
 	{
 		background-color: @bgDefault;
@@ -85,8 +86,18 @@ body
 			}
 		}
 	}
+	footer 
+	{
+		bottom : 		  0;
+		padding-top: 	  10px;
+		position: 		  fixed !important;
+		background-color: @bleu; 
+		color: white;
+	}
 	@media (max-width: 767px) 
 	{
+		padding: 0;
+		margin : 0;
 		.container
 		{
 			padding: 0;
@@ -95,7 +106,7 @@ body
 			{
 				padding-left:  10px;
 				padding-right: 10px;
-				
+
 				.navbar-nav > li > a
 				 {
 					text-align: center;
