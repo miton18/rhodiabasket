@@ -167,6 +167,14 @@
 			$(function(){ 
 				$( "#" + $.urlParam('P') ).parent().addClass("active");
 			});
+
+		      window.fbAsyncInit = function() {
+		        FB.init({
+		          appId      : '{your-app-id}',
+		          xfbml      : true,
+		          version    : 'v2.0'
+		        });
+		      };
 		</script>
 	</body>
 </html>
