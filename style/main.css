@@ -70,7 +70,8 @@ body footer {
   left: 0;
   padding-top: 10px;
   position: fixed !important;
-  background-color: #3065a0;
+  background-color: #4b58f5;
+  border: 1px solid #2113ca;
   color: white;
 }
 @media (max-width: 767px) {

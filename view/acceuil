@@ -1,19 +1,28 @@
-<div class="col-sm-6">
-	<h2>Bienvenue sur le site du club!</h2>
-	<div class="alert alert-info alert-dismissible col-sm-10" role="alert">
-  		<button type="button" class="close" data-dismiss="alert">
-  			<span aria-hidden="true">&times;</span>
-  			<span class="sr-only">Fermer</span>
-  		</button>
-	  <strong>Exceptionnel!</strong> Le club viens de fêter ses 85 ans !
+<div class="row" >
+	<div class="col-sm-6">
+		<h2>Bienvenue au club !</h2>
+		<div class="alert alert-info alert-dismissible col-sm-10" role="alert">
+	  		<button type="button" class="close" data-dismiss="alert">
+	  			<span aria-hidden="true">&times;</span>
+	  			<span class="sr-only">Fermer</span>
+	  		</button>
+		  <strong>Exceptionnel!</strong> Le club viens de fêter ses 85 ans !
+		</div>
+	</div>
+	<div class="col-sm-6 hidden-xs" >
+		<img class="col-sm-6 col-sm-offset-3" src="img/global/logo-l.png">
 	</div>
 </div>
-<div class="col-sm-6 hidden-xs" >
-	<img class="col-sm-6 col-sm-offset-3" src="img/global/logo-l.png">
-</div>
 <div class="row">
-	<ul>
-		<li>Planning des matches</li>
-		<li>Equipe<li>
-	</ul>  
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+
+		<div class="fb-like-box" data-href="https://www.facebook.com/pages/RhodiaClub/700665929998834" data-colorscheme="dark" data-show-faces="false" data-header="false" data-stream="true" data-show-border="true"></div>
 </div>
