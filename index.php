@@ -9,7 +9,7 @@
 	    exit('lessc fatal error:'.$ex->getMessage());
 	}
 ?>
-<html>
+<html ng-app="App">
 	<head>
 		<!--	CSS	-->
 		<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
@@ -36,6 +36,8 @@
 
 		<link rel="icon" type="image/png" href="img/fav.jpg" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="img/fav.jpg" /><![endif]-->
+		
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -72,17 +74,8 @@
   								</ul>
 							</li>
 							<li>
-								<a class="dropdown-toggle"  data-toggle="dropdown" href="#">Planning entrainements 
-									<span class="caret"></span>
+								<a href="index.php?P=planE">Planning entrainements 
 								</a>
-								<ul class="dropdown-menu" role="menu" >
-  									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=planE&amp;T=M">Masculin</a>
-  									</li>
-  									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=planE&amp;T=F">Féminin</a>
-  									</li>
-  								</ul>
 							</li>
 							<li><a class="dropdown-toggle"  data-toggle="dropdown" href="#">Encadrement 
 									<span class="caret"></span>
@@ -151,14 +144,6 @@
 		<script type="text/javascript" src="jquery.min.js"  ></script>
 		<script type="text/javascript" src="bootstrap.min.js"></script>	
 		<script type="text/javascript">
-			$.ajax({
-		       url : 'http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FRhodiaClub%2F700665929998834&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=true',
-		       type : 'GET',
-		       dataType : 'html', // On désire recevoir du HTML
-		       success : function(data, statut){ // code_html contient le HTML renvoyé
-		           $('#facebook').html( data );
-		       }
-		    });
 
 			$.urlParam = function(sParam){
 			    var sPageURL = window.location.search.substring(1);

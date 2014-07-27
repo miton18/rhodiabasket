@@ -12,10 +12,12 @@ body
 	    -moz-background-size: cover;
 	    -o-background-size: cover;
 	background-size: cover;
+
 	.navbar-default 
 	{
 		background-color: @bgDefault;
 		border-color: @bgHighlight;
+
 		#brand
 		{
 			img
@@ -94,6 +96,30 @@ body
 	h2
 	{
 		color: white;
+	}
+	#personnes div{
+		margin: 2%;
+
+		span
+		{
+			display: inline-block;
+		}
+		img
+		{
+			float: none;
+		}
+		.caption
+		{
+			text-align: center;
+
+			aside
+			{
+				border: 1px solid @bgHighlight;
+				border-radius: 9px;
+				background-color: rgba(200,200,200,0.5);
+				padding: 3%;
+			}
+		}
 	}
 	footer 
 	{

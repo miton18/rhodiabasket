@@ -65,6 +65,24 @@ body .navbar-default .navbar-link:hover {
 body h2 {
   color: white;
 }
+body #personnes div {
+  margin: 2%;
+}
+body #personnes div span {
+  display: inline-block;
+}
+body #personnes div img {
+  float: none;
+}
+body #personnes div .caption {
+  text-align: center;
+}
+body #personnes div .caption aside {
+  border: 1px solid #2113ca;
+  border-radius: 9px;
+  background-color: rgba(200,200,200,0.5);
+  padding: 3%;
+}
 body footer {
   bottom: 0;
   left: 0;
