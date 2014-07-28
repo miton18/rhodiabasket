@@ -11,10 +11,11 @@ body .navbar-default {
   border-color: #2113ca;
 }
 body .navbar-default #brand img {
-  height: 30px;
+  height: 35px;
 }
 body .navbar-default .navbar-brand {
   color: #d7dbff;
+  padding-top: 10px;
 }
 body .navbar-default .navbar-brand:hover,
 body .navbar-default .navbar-brand:focus {
@@ -102,8 +103,6 @@ body footer div p a:hover {
   body .container {
     margin: 0;
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
   }
   body .container nav .navbar-default {
     display: inline-block;

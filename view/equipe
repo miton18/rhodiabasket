@@ -5,7 +5,7 @@
 	<div class="row">
 		<div 	  class="col-sm-3 thumbnail" ng-repeat="P in Bureau" id="B">
 			<span class="label label-primary">{{ P.role }}</span>
-			<img  class="col-xs-12 hidden-xs img-circle" src="{{P.photo}}" >
+			<img  class="col-xs-12 hidden-xs img-circle" ng-show="P.photo != ''" src="{{P.photo}}" style="height: 190px;" >
 			<div  class="caption">
 				<aside>
 					<p>{{ P.nom  }}</p>
@@ -51,7 +51,7 @@
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "Présidente",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Rémi Collignon",
@@ -65,56 +65,56 @@
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "Bureau",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Corinne BERLAND",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "Trésorière",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Karine TORSIELLO",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "correspondante comité",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Nelly GESSKOFF",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "Bureau",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Nicolas BREYER",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "responsable technique",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Sandrine RIVAT",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "secrétaire",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Sherazad NEHAD",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "Bureau",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "Veronique UNTERNAHRER",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "Bureau",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			}			
 		];
 		$scope.Entraineur = [
@@ -123,77 +123,77 @@
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "Entraineur",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			},
 			{
 				"nom"   : "",
 				"tel"   : "---",
 				"mail"  : "---",
 				"role"  : "",
-				"photo" : "---"
+				"photo" : "img/global/personne.png"
 			}
 		];
 	});
