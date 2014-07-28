@@ -1,13 +1,42 @@
-<div ng-controller="equipe" 		class="col-lg-12" id="personnes">
-	<div ng-repeat="P in personnes" class="col-sm-3 thumbnail">
-		<span class="label label-primary">{{ P.role }}</span>
-		<img src="{{P.photo}}" 		class="col-xs-12 hidden-xs img-circle">
-		<div class="caption">
-			<aside>
-				<p>{{ P.nom  }}</p>
-				<p><a href="mailto:{{ P.mail }}" >{{ P.mail }}</a></p>
-				<p><a href="tel:{{ P.tel }}"     >{{ P.tel  }}</a></p>
-			</aside>
+<div 	 class="col-lg-12" ng-controller="equipe" id="personnes">
+	<div class="row">
+		<h2>Bureau:</h2>
+	</div>
+	<div class="row">
+		<div 	  class="col-sm-3 thumbnail" ng-repeat="P in Bureau" id="B">
+			<span class="label label-primary">{{ P.role }}</span>
+			<img  class="col-xs-12 hidden-xs img-circle" src="{{P.photo}}" >
+			<div  class="caption">
+				<aside>
+					<p>{{ P.nom  }}</p>
+					<p>
+						<a href="mailto:{{ P.mail }}" >{{ P.mail }}</a>
+					</p>
+					<p>
+						<a href="tel:{{ P.tel }}"     >{{ P.tel  }}</a>
+					</p>
+				</aside>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<h2>Entraineurs:</h2>
+	</div>
+	<div class="row">
+		<div 	  class="col-sm-3 thumbnail" ng-repeat="P in Entraineur" id="E">
+			<span class="label label-primary">{{ P.role }}</span>
+			<img  class="col-xs-12 hidden-xs img-circle" src="{{P.photo}}" >
+			<div  class="caption">
+				<aside>
+					<p>{{ P.nom  }}</p>
+					<p>
+						<a href="mailto:{{ P.mail }}" >{{ P.mail }}</a>
+					</p>
+					<p>
+						<a href="tel:{{ P.tel }}"     >{{ P.tel  }}</a>
+					</p>
+				</aside>
+			</div>
 		</div>
 	</div>
 </div>
@@ -16,14 +45,7 @@
 	var App = angular.module('App',[]);
 	App.controller('equipe', function($scope) {
 
-  		$scope.personnes = [
-			{
-				"nom"   : "Rémi Collignon",
-				"tel"   : "---",
-				"mail"  : "contact@rcdinfo.fr",
-				"role"  : "Developpeur web",
-				"photo" : "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/c27.0.160.160/p160x160/10308337_10202773982822199_7573237223106598054_n.jpg"
-			},
+  		$scope.Bureau = [
 			{
 				"nom"   : "Edith ZERR",
 				"tel"   : "---",
@@ -32,12 +54,146 @@
 				"photo" : "---"
 			},
 			{
-				"nom"   : "---",
+				"nom"   : "Rémi Collignon",
+				"tel"   : "---",
+				"mail"  : "contact@rcdinfo.fr",
+				"role"  : "Developpeur web",
+				"photo" : "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/c27.0.160.160/p160x160/10308337_10202773982822199_7573237223106598054_n.jpg"
+			},
+			{
+				"nom"   : "Christelle BOSLAND ",
 				"tel"   : "---",
 				"mail"  : "---",
-				"role"  : "---",
+				"role"  : "Bureau",
 				"photo" : "---"
-
+			},
+			{
+				"nom"   : "Corinne BERLAND",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "Trésorière",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "Karine TORSIELLO",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "correspondante comité",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "Nelly GESSKOFF",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "Bureau",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "Nicolas BREYER",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "responsable technique",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "Sandrine RIVAT",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "secrétaire",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "Sherazad NEHAD",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "Bureau",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "Veronique UNTERNAHRER",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "Bureau",
+				"photo" : "---"
+			}			
+		];
+		$scope.Entraineur = [
+			{
+				"nom"   : "Anthony CHARRIERE",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "Entraineur",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
+			},
+			{
+				"nom"   : "",
+				"tel"   : "---",
+				"mail"  : "---",
+				"role"  : "",
+				"photo" : "---"
 			}
 		];
 	});

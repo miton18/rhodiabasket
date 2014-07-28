@@ -36,7 +36,7 @@
 
 		<link rel="icon" type="image/png" href="img/fav.jpg" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="img/fav.jpg" /><![endif]-->
-		
+
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
 	</head>
 	<body>
@@ -60,36 +60,36 @@
 					<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li><a href="index.php">Accueil</a></li>
-							<li>
+							<li id="planM" >
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Planning des matchs 
 									<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu" role="menu" >
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=plan&amp;T=M">Masculin</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=planM&amp;T=M">Masculin</a>
   									</li>
   									<li role="presentation">
   										<a role="menuitem" tabindex="-1" href="index.php?P=planM&amp;T=F">Féminin</a>
   									</li>
   								</ul>
 							</li>
-							<li>
+							<li id="planE" >
 								<a href="index.php?P=planE">Planning entrainements 
 								</a>
 							</li>
-							<li><a class="dropdown-toggle"  data-toggle="dropdown" href="#">Encadrement 
+							<li id="equipe" ><a class="dropdown-toggle"  data-toggle="dropdown" href="#">Encadrement 
 									<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu" role="menu" >
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=equipe&amp;T=B">Le bureau</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=equipe#B">Le bureau</a>
   									</li>
   									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=equipe&amp;T=E">Les entraineurs</a>
+  										<a role="menuitem" tabindex="-1" href="index.php?P=equipe#E">Les entraineurs</a>
   									</li>
   								</ul>
 							</li>
-							<li>
+							<li id="gal" >
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallerie
 									<span class="caret"></span>
 								</a>
@@ -105,7 +105,15 @@
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li>
-								<a href="#">Newsletter</a>
+								<a  class="dropdown-toggle" data-toggle="dropdown" href="#">Newsletter</a>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<div role="menuitem" tabindex="-1" class="input-group">
+											<span class="input-group-addon">@</span>
+											<input type="email" class="form-control" placeholder="Mail">
+										</div>
+									</li>
+								</ul>
 							</li>
 							<li>
 								<a id="contact" href="index.php?P=contact">Contact</a>
@@ -116,7 +124,7 @@
 			</nav>
 
 			<?php
-				if ( isset ($_GET['P'])  )
+				if ( isset ($_GET['P']) and $_GET['P'] != "" )
 				{
 					if ( file_exists ("view/" . $_GET['P']) or file_exists ("view\\" . $_GET['P']) )
 					{
@@ -144,25 +152,38 @@
 		<script type="text/javascript" src="jquery.min.js"  ></script>
 		<script type="text/javascript" src="bootstrap.min.js"></script>	
 		<script type="text/javascript">
+			$(document).ready( function () {
+				$.urlParam = function(sParam){
+				    var sPageURL = window.location.search.substring(1);
+				    var sURLVariables = sPageURL.split('&');
+				    for (var i = 0; i < sURLVariables.length; i++)
+				    {
+				        var sParameterName = sURLVariables[i].split('=');
+				        if (sParameterName[0] == sParam)
+				        {
+				            return sParameterName[1];
+				        }
+				        else
+				        {
+				        	return false;
+				        }
+				    }
+				}
+				/*	Fonce le menu par rapport a la page active	*/
+				$(function(){ 
+					$( "#" + $.urlParam('P') ).addClass("active");
+				});
 
-			$.urlParam = function(sParam){
-			    var sPageURL = window.location.search.substring(1);
-			    var sURLVariables = sPageURL.split('&');
-			    for (var i = 0; i < sURLVariables.length; i++)
-			    {
-			        var sParameterName = sURLVariables[i].split('=');
-			        if (sParameterName[0] == sParam)
-			        {
-			            return sParameterName[1];
-			        }
-			    }
-			}
-
-			$(function(){ 
-				$( "#" + $.urlParam('P') ).parent().addClass("active");
+				$(function(){
+					var ancre = $.urlParam('T');
+					if( ancre != false ){
+					    $('html,body').animate(
+					    {
+					    	scrollTop: $(ancre).offset().top
+					    }, 'slow' );
+					}  
+				});
 			});
-
-
 		</script>
 	</body>
 </html>

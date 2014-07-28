@@ -92,6 +92,32 @@ body footer {
   border: 1px solid #2113ca;
   color: white;
 }
+body footer div p a {
+  color: #2113ca;
+}
+body footer div p a:hover {
+  color: red;
+}
+@media (max-width: 1200px) and (min-width: 768px) {
+  body .container {
+    margin: 0;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body .container nav .navbar-default {
+    display: inline-block;
+  }
+  body .container nav .navbar-default .navbar-header {
+    float: left;
+  }
+  body .container nav .navbar-default .navbar-collapse {
+    display: inline-block !important;
+  }
+  body .container nav .navbar-default .navbar-collapse .nav {
+    float: none;
+  }
+}
 @media (max-width: 767px) {
   body {
     padding: 0;
@@ -99,6 +125,7 @@ body footer {
   }
   body .container {
     padding: 0;
+    padding-bottom: 100px;
   }
   body .container .navbar-default {
     padding-left: 10px;

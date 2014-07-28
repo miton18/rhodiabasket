@@ -1,9 +1,9 @@
 @bleu: #3065a0;
 
-@bgDefault      : #4b58f5;
-@bgHighlight    : #2113ca;
-@colDefault     : #d7dbff;
-@colHighlight   : #ffffff;
+@bgDefault      : #4b58f5;	  // bleu clair
+@bgHighlight    : #2113ca;	 // bleu foncé
+@colDefault     : #d7dbff;	// gris
+@colHighlight   : #ffffff; // blanc
 body
 {
 	height : 90%;
@@ -99,7 +99,6 @@ body
 	}
 	#personnes div{
 		margin: 2%;
-
 		span
 		{
 			display: inline-block;
@@ -130,14 +129,57 @@ body
 		background-color: @bgDefault; 
 		border: 1px solid @bgHighlight;
 		color: white;
+
+		div p a
+		{
+			color: @bgHighlight;
+			
+			&:hover
+			{
+				color: red;
+			}
+		}
 	}
-	@media (max-width: 767px) 
+	@media (max-width: 1200px) and (min-width: 768px) // ecran moyen
+	{
+		.container
+		{
+			margin: 0;
+			width : 100%;
+			padding-left: 0;
+			padding-right: 0;
+
+			nav
+			{
+				.navbar-default
+				{
+					display : inline-block;
+
+					.navbar-header
+					{
+						float: left;
+					}
+					.navbar-collapse
+					{
+						display: inline-block !important;
+						
+						.nav
+						{
+							float: none;						
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 767px) //smartphone
 	{
 		padding: 0;
 		margin : 0;
 		.container
 		{
 			padding: 0;
+			padding-bottom: 100px;
 
 			.navbar-default
 			{
