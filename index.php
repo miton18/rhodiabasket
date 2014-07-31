@@ -61,17 +61,8 @@
 						<ul class="nav navbar-nav">
 							<li><a href="index.php">Accueil</a></li>
 							<li id="planM" >
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Planning des matchs 
-									<span class="caret"></span>
+								<a href="index.php?P=planM">Planning des matchs 
 								</a>
-								<ul class="dropdown-menu" role="menu" >
-  									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=planM&amp;T=M">Masculin</a>
-  									</li>
-  									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=planM&amp;T=F">Féminin</a>
-  									</li>
-  								</ul>
 							</li>
 							<li id="planE" >
 								<a href="index.php?P=planE">Planning entrainements 
@@ -90,31 +81,12 @@
   								</ul>
 							</li>
 							<li id="gal" >
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallerie
+								<a href="index.php?P=galerie">Gallerie
 									<span class="caret"></span>
 								</a>
-								<ul class="dropdown-menu" role="menu" >
-  									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=gal&amp;T=M">Masculin</a>
-  									</li>
-  									<li role="presentation">
-  										<a role="menuitem" tabindex="-1" href="index.php?P=gal&amp;T=F">Féminin</a>
-  									</li>
-  								</ul>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<a  class="dropdown-toggle" data-toggle="dropdown" href="#">Newsletter</a>
-								<ul class="dropdown-menu" role="menu">
-									<li>
-										<div role="menuitem" tabindex="-1" class="input-group">
-											<span class="input-group-addon">@</span>
-											<input type="email" class="form-control" placeholder="Mail">
-										</div>
-									</li>
-								</ul>
-							</li>
 							<li>
 								<a id="contact" href="index.php?P=contact">Contact</a>
 							</li>
