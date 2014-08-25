@@ -82,11 +82,17 @@
   								</ul>
 							</li>
 							<li id="gal" >
+<<<<<<< HEAD
 								<a href="index.php?P=gal">Gallerie
+=======
+								<a href="index.php?P=galerie">Gallerie
+									<span class="caret"></span>
+>>>>>>> 57f9c8515e3deba99cea5ee7fd80cfedf25b2d60
 								</a>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
 							<!--li>
 								<a  class="dropdown-toggle" data-toggle="dropdown" href="#">Newsletter</a>
 								<ul class="dropdown-menu" role="menu">
@@ -98,6 +104,8 @@
 									</li>
 								</ul>
 							</li-->
+=======
+>>>>>>> 57f9c8515e3deba99cea5ee7fd80cfedf25b2d60
 							<li>
 								<a id="contact" href="index.php?P=contact">Contact</a>
 							</li>
