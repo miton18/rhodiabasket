@@ -6,6 +6,9 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+body .container {
+  padding-bottom: 35px;
+}
 body .navbar-default {
   background-color: #4b58f5;
   border-color: #2113ca;
@@ -84,7 +87,10 @@ body #personnes div .caption aside {
   background-color: rgba(200,200,200,0.5);
   padding: 3%;
 }
-body footer {
+body blockquote {
+  font-size: 0.9em !important;
+}
+body #footer-Principal {
   bottom: 0;
   left: 0;
   padding-top: 10px;
@@ -93,10 +99,10 @@ body footer {
   border: 1px solid #2113ca;
   color: white;
 }
-body footer div p a {
+body #footer-Principal div p a {
   color: #2113ca;
 }
-body footer div p a:hover {
+body #footer-Principal div p a:hover {
   color: red;
 }
 @media (max-width: 1200px) and (min-width: 768px) {

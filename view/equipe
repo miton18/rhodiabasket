@@ -3,7 +3,7 @@
 		<h2>Bureau:</h2>
 	</div>
 	<div class="row">
-		<div 	  class="col-sm-3 thumbnail" ng-repeat="P in Bureau" id="B">
+		<!--div 	  class="col-sm-3 thumbnail" ng-repeat="P in Bureau" id="B">
 			<span class="label label-primary">{{ P.role }}</span>
 			<img  class="col-xs-12 hidden-xs img-circle" ng-show="P.photo != ''" src="{{P.photo}}" style="height: 190px;" >
 			<div  class="caption">
@@ -13,19 +13,19 @@
 						<a href="mailto:{{ P.mail }}" >{{ P.mail }}</a>
 					</p>
 					<p>
-						<a href="tel:{{ P.tel }}"     >{{ P.tel  }}</a>
+						{{ P.poule  }}
 					</p>
 				</aside>
 			</div>
-		</div>
+		</div-->
 	</div>
 	<div class="row">
 		<h2>Entraineurs:</h2>
 	</div>
 	<div class="row">
-		<div 	  class="col-sm-3 thumbnail" ng-repeat="P in Entraineur" id="E">
+		<div 	  class="col-sm-3 thumbnail" ng-repeat="P in Entraineur | orderBy:['poule', 'nom']" id="E">
 			<span class="label label-primary">{{ P.role }}</span>
-			<img  class="col-xs-12 hidden-xs img-circle" src="{{P.photo}}" >
+			<img  class="hidden-xs img-circle" src="{{P.photo}}" style="min-height: 200px; min-width: 200px;!important" >
 			<div  class="caption">
 				<aside>
 					<p>{{ P.nom  }}</p>
@@ -33,7 +33,7 @@
 						<a href="mailto:{{ P.mail }}" >{{ P.mail }}</a>
 					</p>
 					<p>
-						<a href="tel:{{ P.tel }}"     >{{ P.tel  }}</a>
+						<span class="label label-success"> Equipe: {{ P.poule  }} </span>
 					</p>
 				</aside>
 			</div>
@@ -45,7 +45,7 @@
 	var App = angular.module('App',[]);
 	App.controller('equipe', function($scope) {
 
-  		$scope.Bureau = [
+  		/*$scope.Bureau = [
 			{
 				"nom"   : "Edith ZERR",
 				"tel"   : "---",
@@ -116,85 +116,106 @@
 				"role"  : "Bureau",
 				"photo" : "img/global/personne.png"
 			}			
-		];
+		];*/
 		$scope.Entraineur = [
 			{
-				"nom"   : "Anthony CHARRIERE",
-				"tel"   : "---",
+				"nom"   : "Tristan",
+				"poule" : "Cadets",
+				"mail"  : "---",
+				"role"  : "Entraineur",
+				"photo" : "img/face/tristan.jpg"
+			},
+			{
+				"nom"   : "Mélanie",
+				"poule" : "Minimes (filles)",
+				"mail"  : "---",
+				"role"  : "Entraineur",
+				"photo" : "img/face/melanie.jpg"
+			},
+			{
+				"nom"   : "Elsa",
+				"poule" : "Poussins",
+				"mail"  : "---",
+				"role"  : "Entraineur",
+				"photo" : "img/face/elsa.jpg"
+			},
+			{
+				"nom"   : "Valérie",
+				"poule" : "Poussins / Poussines",
 				"mail"  : "---",
 				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Anthonie",
+				"poule" : "Benjamins",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Charlotte",
+				"poule" : "Minimes (garçons)",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Coralie",
+				"poule" : "Minimes (garçons)",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Cyrielle",
+				"poule" : "Benjamines",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Karine",
+				"poule" : "Cadets",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Loris",
+				"poule" : "Benjamines",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Malik",
+				"poule" : "Benjamins",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Nicolas",
+				"poule" : "Minimes ??? (filles)",
 				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur/Resp. technique",
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "",
-				"tel"   : "---",
+				"nom"   : "Ousmane",
+				"poule" : "Seniors (filles)",
 				"mail"  : "---",
-				"role"  : "",
-				"photo" : "img/global/personne.png"
-			},
-			{
-				"nom"   : "",
-				"tel"   : "---",
-				"mail"  : "---",
-				"role"  : "",
+				"role"  : "Entraineur",
 				"photo" : "img/global/personne.png"
 			}
+			/*{
+				"nom"   : "Rémi Collignon",
+				"poule" : "http://remi.rcdinfo.fr",
+				"mail"  : "contact@rcdinfo.fr",
+				"role"  : "Developpeur web",
+				"photo" : "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/c27.0.160.160/p160x160/10308337_10202773982822199_7573237223106598054_n.jpg"
+			}*/
 		];
 	});
 </script>
