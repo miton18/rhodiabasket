@@ -90,6 +90,17 @@ body #personnes div .caption aside {
 body blockquote {
   font-size: 0.9em !important;
 }
+body #contact-div {
+  color: #3065a0;
+  background-image: linear-gradient(to bottom,#e8e8e8 0%,#f5f5f5 100%);
+  box-shadow: inset 0px -7px 6px 1px #4b58f5;
+  border-radius: 10px;
+  padding: 20px;
+}
+body #map-canvas {
+  height: 480px;
+  width: 100%;
+}
 body #footer-Principal {
   bottom: 0;
   left: 0;
@@ -122,6 +133,9 @@ body #footer-Principal div p a:hover {
   body .container nav .navbar-default .navbar-collapse .nav {
     float: none;
   }
+  body .container #map-canvas {
+    height: 330px;
+  }
 }
 @media (max-width: 767px) {
   body {
@@ -138,6 +152,9 @@ body #footer-Principal div p a:hover {
   }
   body .container .navbar-default .navbar-nav > li > a {
     text-align: center;
+  }
+  body .container #map-canvas {
+    height: 300px;
   }
   body .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #d7dbff;

@@ -127,10 +127,20 @@ body
 	blockquote
 	{
 		font-size: 0.9em !important;
-		p
-		{
-
-		}
+	}
+	#contact-div
+	{
+		color: @bleu;
+		background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
+		box-shadow: inset 0px -7px 6px 1px @bgDefault;
+		border-radius: 10px;
+		padding: 20px;
+		.text-center();
+	}
+	#map-canvas
+	{
+		height: 480px;
+		width: 100%;
 	}
 	#footer-Principal
 	{
@@ -180,6 +190,10 @@ body
 					}
 				}
 			}
+			#map-canvas
+			{
+				height: 330px;
+			}
 		}
 	}
 	@media (max-width: 767px) //smartphone
@@ -200,6 +214,10 @@ body
 				 {
 					text-align: center;
 				}
+			}
+			#map-canvas
+			{
+				height: 300px;
 			}
 		}
 		.navbar-default .navbar-nav .open .dropdown-menu
