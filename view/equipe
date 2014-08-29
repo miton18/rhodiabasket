@@ -147,7 +147,7 @@
 				"photo" : "img/global/personne.png"
 			},
 			{
-				"nom"   : "Anthonie",
+				"nom"   : "Anthony",
 				"poule" : "Benjamins",
 				"mail"  : "---",
 				"role"  : "Entraineur",
@@ -197,7 +197,7 @@
 			},
 			{
 				"nom"   : "Nicolas",
-				"poule" : "Minimes ??? (filles)",
+				"poule" : "Minimes (filles)",
 				"mail"  : "---",
 				"role"  : "Entraineur/Resp. technique",
 				"photo" : "img/global/personne.png"

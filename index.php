@@ -1,8 +1,8 @@
 <?php
 	require 'inc/lessc.inc.php';
-	try {
+	try 
+	{
 	     lessc::ccompile('style/main.less', 'style/main.css');
-	     lessc::ccompile('style/mobile.less', 'style/mobile.css');
 	} 
 	catch (exception $ex) 
 	{
@@ -16,13 +16,6 @@
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-theme.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-responsive.min.css">
 		<link rel="stylesheet" type="text/css" href="style/main.css">
-		
-		<link rel="stylesheet" type="text/css" href="style/mobile.css">
-		<!-- GOOGLE FONT -->
-		<!--link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
-		
-				<link href='http://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'-->
 
 		<meta charset="utf_8">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -34,8 +27,8 @@
 
 		<title>rhodiabasket - Site du club</title>
 
-		<link rel="icon" type="image/png" href="img/fav.jpg" />
-		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="img/fav.jpg" /><![endif]-->
+		<link rel="icon" type="image/png" href="img/global/logo-s.png" />
+		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="iimg/global/logo-s.png" /><![endif]-->
 
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
 		<!--script src="//localhost/SOURCES/angular.min.js"></script-->
