@@ -1,104 +1,34 @@
-<div class="row">
-	<div class="col-md-6 col-md-offset-3" id="contact-div" >
-		<dl class="dl-horizontal">
-			<dt>
-				<span class="glyphicon glyphicon-envelope"></span> Mail :
-			</dt>
-			<dd>
-				<a 	  href="mailto:rhodiabasket@gmail.com" > rhodiabasket@gmail.com </a><br>
-			</dd>
-			<dt>
-				<span class="glyphicon glyphicon-earphone"></span> Telephone :
-			</dt>
-			<dd>
-				<a    href="tel:0683316739" > 06 83 31 67 39 </a>
-			</dd>
-		</dl>
+<div ng-controller="mapi">
+	<div class="row" >
+		<div class="col-md-4">
+			<p ng-repeat="L in gymnases | orderBy:['nom']" > 
+				<span>{{ L.nom }}</span>
+			</p>
+		</div>
+		<div class="col-md-4 col-md-offset-8" id="contact-div" >
+			<dl class="dl-horizontal">
+				<dt>
+					<span class="glyphicon glyphicon-envelope"></span> Mail :
+				</dt>
+				<dd>
+					<a 	  href="mailto:rhodiabasket@gmail.com" > rhodiabasket@gmail.com </a><br>
+				</dd>
+				<dt>
+					<span class="glyphicon glyphicon-earphone"></span> Telephone :
+				</dt>
+				<dd>
+					<a    href="tel:0683316739" > 06 83 31 67 39 </a>
+				</dd>
+			</dl>
+		</div>
 	</div>
+	<h2>Où trouver les gymnases ?</h2>
+	<div class="row">
+		<!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1599.4573011678876!2d4.81578031378519!3d45.33003430165679!2m3!1f0!2f41.28140605312351!3f0!3m2!1i1024!2i768!4f20!3m3!1m2!1s0x47f53d4bef4c1a59%3A0xd0d88d1c4f7a427!2sGymnase+Joseph+Plat!5e1!3m2!1sfr!2sfr!4v1409082914183" frameborder="0" style="border:0;height:100%;width:100%;"></iframe-->
+		<div id="map-canvas"/>
+	</div>
+
+	<script type="text/javascript"
+	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD3q-Imx_JfkqzIiw5mxCYp37uuahnjvY">
+	</script>
 </div>
-<h2>Où trouver les gymnases ?</h2>
-<div class="row">
-	<!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1599.4573011678876!2d4.81578031378519!3d45.33003430165679!2m3!1f0!2f41.28140605312351!3f0!3m2!1i1024!2i768!4f20!3m3!1m2!1s0x47f53d4bef4c1a59%3A0xd0d88d1c4f7a427!2sGymnase+Joseph+Plat!5e1!3m2!1sfr!2sfr!4v1409082914183" frameborder="0" style="border:0;height:100%;width:100%;"></iframe-->
-	<div id="map-canvas"/>
-</div>
-
-<script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD3q-Imx_JfkqzIiw5mxCYp37uuahnjvY">
-</script>
-<script type="text/javascript">
-    function initialize() 
-    {
-        var mapOptions = 
-        {
-          center: new google.maps.LatLng(45.378040, 4.811272), 
-          zoom: 12,
-          mapTypeId: google.maps.MapTypeId.HYBRID
-        };
-        var map = new google.maps.Map( document.getElementById("map-canvas"), mapOptions);
-
-        //pointeurs gymnases
-        /*
-        Gymnase Frédéric MISTRAL, rue Victor Renelle 38550 St Maurice l’Exil
-		Gymnase Bacquet, avenue Beyle Stendhal 38150 Roussillon
-		Gymnase Joseph Plat, impasse Jean Bouin 38150 Salaise sur Sanne
-		Gymnase Pierre Quinon, rue Edouard Aubert 38150 Salaise sur Sanne.
-        */
-        var marker1 = new google.maps.Marker(
-        {
-      		position: new google.maps.LatLng(45.396264, 4.780496),
-      		map: map,
-      		title: 'Gymnase Frédéric MISTRAL'
-  		});
-  		google.maps.event.addListener(marker1, 'click', function() 
-	    {
-	    	new google.maps.InfoWindow(
-	    	{
-	    		content: '<h5>' + marker1.title + '</h5>'
-	  		}).open(map,marker1);
-	  	});	
-
-        var marker2 = new google.maps.Marker(
-        {
-      		position: new google.maps.LatLng(45.365006, 4.806152),
-      		map: map,
-      		title: 'Gymnase BACKET'
-  		});
-  		google.maps.event.addListener(marker2, 'click', function() 
-	    {
-	    	new google.maps.InfoWindow(
-	    	{
-	    		content: '<h5>' + marker2.title + '</h5>'
-	  		}).open(map,marker2);
-	  	});	
-
-        var marker3 = new google.maps.Marker(
-        {
-      		position: new google.maps.LatLng(45.342242, 4.815425),
-      		map: map,
-      		title: 'Gymnase Joseph PLAT'
-  		});
-  		google.maps.event.addListener(marker3, 'click', function() 
-	    {
-	    	new google.maps.InfoWindow(
-	    	{
-	    		content: '<h5>' + marker3.title + '</h5>'
-	  		}).open(map,marker3);
-	  	});	
-
-        var marker4 = new google.maps.Marker(
-        {
-      		position: new google.maps.LatLng(45.339812, 4.819527),
-      		map: map,
-      		title: 'Gymnase Pierre QUINON'
-  		});
-  		google.maps.event.addListener(marker4, 'click', function() 
-	    {
-	    	new google.maps.InfoWindow(
-	    	{
-	    		content: '<h5>' + marker4.title + '</h5>'
-	  		}).open(map,marker4);
-	  	});	
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
