@@ -1,0 +1,27 @@
+<div>
+	<?php
+		session_start();
+		require_once('inc/bdd.php');
+
+		if ( isset( $_SESSION['login']) )
+		{
+
+			if( $_SESSION['login'] = true )
+			{
+			//c'est bon il est logué
+				require_once('view/G_panel');
+			}
+			else
+			{
+				// bad mot de passe
+				$_SESSION['login_error'] = true;
+				require_once('view/G_login');
+			}
+		}
+		else
+		{
+			require_once('view/G_login');
+		}
+	?>
+
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+		<form class="login" method="POST" action="index.php?P=gestion">
+			<div class="login-screen">
+				<div class="app-title">
+					<h1>Connexion entraineurs</h1>
+				</div>
+
+				<div class="login-form">
+				<div class="control-group">
+					<input type="text" class="login-field" value="" placeholder="utilisateur" id="login-name">
+					<label class="login-field-icon fui-user" for="login-name"></label>
+					</div>
+
+					<div class="control-group">
+					<input type="password" class="login-field" value="" placeholder="mot de passe" id="login-pass">
+					<label class="login-field-icon fui-lock" for="login-pass"></label>
+					</div>
+
+					<input type="submit" style="width:250px;"class="btn btn-primary btn-large btn-block" value="Connexion">
+					<a class="login-link" href="mailto;remi@rcdinfo.fr">contacter l'administrateur</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
