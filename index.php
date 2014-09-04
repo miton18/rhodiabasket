@@ -9,7 +9,7 @@
 	    exit('lessc fatal error:'.$ex->getMessage());
 	}
 ?>
-<html ng-app="App">
+<html data-ng-app="App">
 	<head>
 		<!--	CSS	-->
 		<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
@@ -26,7 +26,7 @@
 
 		<title>rhodiabasket - Site du club</title>
 
-		<link rel="icon" type="image/png" alt="logo du rhodiabasket" href="img/global/logo-s.png" />
+		<link rel="icon" type="image/png" href="img/global/logo-s.png" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="iimg/global/logo-s.png" /><![endif]-->
 
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
@@ -46,7 +46,7 @@
 						</button>
 						<a class="navbar-brand" id="acceuil" href="index.php">
 							<span id="brand">
-								<img src="img/global/logo-s.png"> RhodiaClub Basket
+								<img alt="logo du rhodiabasket" src="img/global/logo-s.png"> RhodiaClub Basket
 							</span>
 						</a>
 					</div>
@@ -74,7 +74,7 @@
   								</ul>
 							</li>
 							<li id="gal" >
-								<a href="index.php?P=gal">Gallerie
+								<a href="index.php?P=gal">Galerie
 								</a>
 							</li>
 						</ul>
@@ -122,12 +122,13 @@
 						<a href="http://remi.rcdinfo.fr" target="_blank">Collignon Rémi</a>
 						Copyright réservé Rhodiabasket
 					</p>
+				</div>
 		</footer>
 		</div>
 		<script type="text/javascript" src="jquery.min.js"  ></script>
 		<script type="text/javascript" src="bootstrap.min.js"></script>	
 		<script type="text/javascript">
-			$(document).ready( function () {
+			$(document).ready( function () { // a imbriquer dans un controller
 				$.urlParam = function(sParam){
 				    var sPageURL = window.location.search.substring(1);
 				    var sURLVariables = sPageURL.split('&');
@@ -302,13 +303,13 @@
 				$scope.posSel = $scope.gymnases[1];
 
 		    	$scope.select= function(index) {
-		       		$scope.selected = index; 
+		       		$scope.selected = index; // recupere l'index selectionné
 
 		       		// CHANGEMENT DE REPERE
 
 		       		$scope.posSel = $scope.gymnases[index];
 		       		$scope.map.panTo( new google.maps.LatLng( $scope.posSel['lat'], $scope.posSel['lon'], false));
-		       		$scope.map.setZoom(12);
+		       		$scope.map.setZoom(13);
 		   
 		    		if ($scope.pointeur)	// SI POINTEUR EXISTE LE SUPPRIME
 		    		{
@@ -321,18 +322,19 @@
 			      		Animation 	: google.maps.Animation.DROP,
 			      		title 		: $scope.posSel['nom']
 		       		});
-		       		google.maps.event.addListener( $scope.pointeur, 'click', function() {
-		    			new google.maps.InfoWindow({
-		      				content: '<div id="content">'+
-		      						 	'<div id="siteNotice">'+
-									    	'</div>'+
-		    									'<h5 id="firstHeading" class="firstHeading"' + $scope.posSel['nom'] +
-		    									'</h5>'+
-												'<div id="bodyContent"><p>'+ $scope.posSel['adr'] +
-												'</p></div></div></div></div>'
+	    			new google.maps.InfoWindow({
+	      				content: '<h5>' + 
+	      							$scope.posSel['nom'] +
+	    						 '</h5>'+
+								 '<a href="geo:' +
+								  	$scope.posSel['lat'] +
+								  	',' +
+								  	$scope.posSel['lon'] +
+								 '" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;"><span class="glyphicon glyphicon-phone"></span>'+ 
+								 	$scope.posSel['adr'] +
+								 '</a>'
 
-		  				}).open( $scope.map , $scope.pointeur);
-		  			});
+	  				}).open( $scope.map , $scope.pointeur);
 		    	};
 
 				function initialize() 

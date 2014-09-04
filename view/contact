@@ -1,8 +1,11 @@
-<div ng-controller="mapi">
+<div data-ng-controller="mapi">
 	<div class="row" >
 		<div class="col-md-4">
 			<div class="list-group">
-				<a href="#" class="list-group-item" ng-repeat="L in gymnases | orderBy:['nom']" ng-click="select($index)" ng-class="{ active: $index == selected}" >{{ L.nom }}</a>
+				<a href="#" class="list-group-item" data-ng-repeat="L in gymnases | orderBy:['nom']" data-ng-click="select($index)" data-ng-class="{ active: $index == selected}" >
+					<span class="glyphicon glyphicon-map-marker"></span>
+					{{ L.nom }}
+				</a>
 			</div>
 		</div>
 		<div class="col-md-4 col-md-offset-3" id="contact-div" >
@@ -24,11 +27,8 @@
 	</div>
 	<h2>Où trouver les gymnases ?</h2>
 	<div class="row">
-		<!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1599.4573011678876!2d4.81578031378519!3d45.33003430165679!2m3!1f0!2f41.28140605312351!3f0!3m2!1i1024!2i768!4f20!3m3!1m2!1s0x47f53d4bef4c1a59%3A0xd0d88d1c4f7a427!2sGymnase+Joseph+Plat!5e1!3m2!1sfr!2sfr!4v1409082914183" frameborder="0" style="border:0;height:100%;width:100%;"></iframe-->
-		<div id="map-canvas"/>
+		<div id="map-canvas"></div>
 	</div>
 
-	<script type="text/javascript"
-	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD3q-Imx_JfkqzIiw5mxCYp37uuahnjvY">
-	</script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD3q-Imx_JfkqzIiw5mxCYp37uuahnjvY"></script>
 </div>

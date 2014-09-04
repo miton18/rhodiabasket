@@ -9,6 +9,9 @@ body {
 body .container {
   padding-bottom: 35px;
 }
+body .row {
+  margin-left: 0 !important;
+}
 body .navbar-default {
   background-color: #4b58f5;
   border-color: #2113ca;
@@ -141,6 +144,9 @@ body #footer-Principal div p a:hover {
   body {
     padding: 0;
     margin: 0;
+  }
+  body .row div {
+    padding-left: 0;
   }
   body .container {
     padding: 0;
