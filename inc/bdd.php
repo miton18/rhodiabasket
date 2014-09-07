@@ -1,5 +1,5 @@
 <?php
-	require_once('inc/config.php');
+	require_once('config.php');
 	error_reporting(E_ALL);
 	$rep = array();
 
@@ -19,7 +19,7 @@
 				if(D_sql) print_r( $rep ); 		//DEBUG
 			}
 			$db  = NULL;
-			return ( isset($rep) ) ? json_encode( $rep ) : False;
+			return ( isset($rep) ) ? $rep : False;
 		}
 		catch(Exception $e)
 		{

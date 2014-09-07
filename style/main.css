@@ -120,6 +120,9 @@ body #footer-Principal div p a {
 body #footer-Principal div p a:hover {
   color: red;
 }
+body div [data-ng-controller="gestion"] {
+  background-color: #ffffff;
+}
 @media (max-width: 1200px) and (min-width: 768px) {
   body .container {
     margin: 0;

@@ -1,5 +1,5 @@
 <?php
-	define('D_sql', true);
+	define('D_sql', false);
 	define('host', 'localhost'); // test local
 	define('dbname', 'rhodia');
 	define('userdb', 'root');
