@@ -252,6 +252,15 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		$scope.predicate = predicate;
 		$scope.reverse = !$scope.reverse;
 	};
+
+	//
+	$scope.change = function( id ){
+		alert("modif" + id);
+	};
+	$scope.delete = function( id )
+	{
+		alert("del" + id);
+	}
 });
 
 App.filter('startFrom', function() {

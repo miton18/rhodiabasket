@@ -52,9 +52,9 @@
 							    	Action <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" role="menu" style="left: -120%;">
-									<li><a href="#">Modifier</a></li>
+									<li><a href="#" ng-click="change(data.ID)" >Modifier</a></li>
 									<li class="divider"></li>
-									<li><a href="#">Supprimer</a></li>
+									<li><a href="#" ng-click="delete(data.ID)" >Supprimer</a></li>
 								</ul>
 							</div>
 		                </td>
