@@ -88,7 +88,7 @@ App.controller('equipe', function( $scope )
 			"poule" : "Minimes (garçons)",
 			"mail"  : "---",
 			"role"  : "Entraineur",
-			"photo" : "img/global/personne.png"
+			"photo" : "img/face/charlotte.jpg"
 		},
 		{
 			"nom"   : "Coralie",
@@ -102,7 +102,7 @@ App.controller('equipe', function( $scope )
 			"poule" : "Benjamines",
 			"mail"  : "---",
 			"role"  : "Entraineur",
-			"photo" : "img/global/personne.png"
+			"photo" : "img/face/cyrielle.jpg"
 		},
 		{
 			"nom"   : "Karine",
@@ -116,7 +116,7 @@ App.controller('equipe', function( $scope )
 			"poule" : "Benjamines",
 			"mail"  : "---",
 			"role"  : "Entraineur",
-			"photo" : "img/global/personne.png"
+			"photo" : "img/face/loris.jpg"
 		},
 		{
 			"nom"   : "Malik",
