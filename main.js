@@ -74,7 +74,7 @@ App.controller('equipe', function( $scope )
 			"poule" : "Poussins / Poussines",
 			"mail"  : "---",
 			"role"  : "Entraineur",
-			"photo" : "img/global/personne.png"
+			"photo" : "img/face/valerie.jpg"
 		},
 		{
 			"nom"   : "Anthony",

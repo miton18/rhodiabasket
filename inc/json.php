@@ -1,5 +1,8 @@
 <?php
-	require_once( "bdd.php" );
-	$datas = Select( "SELECT * from joueur" );
-	echo json_encode($datas);
+	session_start();
+	if( isset($_SESSION['login']) and $_SESSION['login'] == true)
+	{
+		require_once( "bdd.php" );
+		echo json_encode( Select( "SELECT * from joueur" ) );
+	}
 ?>

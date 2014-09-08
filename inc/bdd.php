@@ -30,7 +30,7 @@
 	}
 
 	//  PERMET DE FAIRE DES REQUETTES DE TYPE "INSERT" "UPDATE" OU "DELETE" DANS LA BASE DE DONNÉE
-	function Ins( $string )
+	function Insert( $string )
 	{
 		try
 		{	
