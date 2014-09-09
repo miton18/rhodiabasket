@@ -1,4 +1,5 @@
 @import url("login.css");
+@import url("bootstrap-lightbox.min.css");
 body {
   height: 90%;
   background: url('../img/global/bg.jpg') no-repeat center center fixed;

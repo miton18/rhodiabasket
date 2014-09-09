@@ -16,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-theme.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-responsive.min.css">
+		<link rel="stylesheet" type="text/css" href="style/bootstrap-lightbox.min.css">
 		<link rel="stylesheet" type="text/css" href="style/main.css">
 
 		<meta charset="utf_8">
@@ -129,10 +130,13 @@
 		<script type="text/javascript" src="jquery.min.js"  >
 		</script>
 		<script type="text/javascript" src="bootstrap.min.js">
-		</script>	
-		<script type="text/javascript" src="ui-bootstrap-tpls-0.11.0.min.js">
 		</script>
+		<script type="text/javascript" src="bootstrap-lightbox.min.js"> 
+		</script>
+		<script type="text/javascript" src="ui-bootstrap-tpls-0.11.0.min.js">
+		</script>		
 		<script type="text/javascript" src="main.js">
 		</script>
+		
 	</body>
 </html>

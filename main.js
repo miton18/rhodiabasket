@@ -42,11 +42,11 @@ App.controller('equipe', function( $scope )
 {
 	$scope.Entraineur = [
 		{
-			"nom"	: "Edith",
-			"poule" : " ",
-			"role"	: "Présidente",
-			"mail"  : "---", 
-			"photo"	: "img/global/personne.png"
+			"nom"	: "Christelle",
+			"poule" : "cadettes",
+			"mail"  : "---",
+			"role"  : "Entraineur",
+			"photo"	: "img/face/christelle.jpg"
 		},
 		{
 			"nom"   : "Tristan",
@@ -154,25 +154,25 @@ App.controller('mapi', function( $scope )
 {
 	$scope.gymnases = [
 		{
-			"nom": "Gymnase Frédéric MISTRAL",
+			"nom": " Gymnase Bacquet",
 			"adr": "rue Victor Renelle 38550 St Maurice l’Exil",
 			"lat": "45.396264",
 			"lon": "4.780496"
 		},
 		{
-			"nom": "Gymnase Bacquet",
+			"nom": " Gymnase Frédéric MISTRAL",
 			"adr": "avenue Beyle Stendhal 38150 Roussillon",
 			"lat": "45.365006",
 			"lon": "4.806152"
 		},
 		{
-			"nom": "Gymnase Joseph Plat",
+			"nom": " Gymnase Joseph Plat",
 			"adr": "impasse Jean Bouin 38150 Salaise sur Sanne",
 			"lat": "45.342242",
 			"lon": "4.815425"
 		},
 		{
-			"nom": "Gymnase Pierre Quinon",
+			"nom": " Gymnase Pierre Quinon",
 			"adr": "rue Edouard Aubert 38150 Salaise sur Sanne.",
 			"lat": "45.339812",
 			"lon": "4.819527"
@@ -212,7 +212,8 @@ App.controller('mapi', function( $scope )
 					  	$scope.posSel['lon'] +
 					 '" style="font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;" title="Uniquement disponnible sous Android"><span class="glyphicon glyphicon-phone"></span>'+ 
 					 	$scope.posSel['adr'] +
-					 '</a>'
+					 '</a>',
+				maxWidth: "200"
 
 			}).open( $scope.map , $scope.pointeur);
 	};
@@ -233,13 +234,17 @@ App.controller('mapi', function( $scope )
 
 App.controller('gestion', function( $scope, $http, $timeout )
 {
-	$http.get('inc/json.php').success(function(data){
-		$scope.list = data;
-		$scope.currentPage = 1; //current page
-		$scope.entryLimit = 20; //max no of items to display in a page
-		$scope.filteredItems = $scope.list.length; //Initially for no filter
-		$scope.totalItems = $scope.list.length;
-	});
+	function loadData(){
+		$http.get('inc/json.php').success(function(data){
+			$scope.list = data;
+			$scope.currentPage = 1; //current page
+			$scope.entryLimit = 20; //max no of items to display in a page
+			$scope.filteredItems = $scope.list.length; //Initially for no filter
+			$scope.totalItems = $scope.list.length;
+		});
+	}
+	loadData(); // initialise les données
+
 	$scope.setPage = function(pageNo) {
 		$scope.currentPage = pageNo;
 	};
@@ -256,10 +261,23 @@ App.controller('gestion', function( $scope, $http, $timeout )
 	//
 	$scope.change = function( id ){
 		alert("modif" + id);
+		/*$('#LBchange').lightbox(
+		{
+			show: true
+		});*/
 	};
 	$scope.delete = function( id )
 	{
-		alert("del" + id);
+		$http.get('inc/G_action.php?del=' + id )
+		.success( function(result)
+		{
+			alert('La personne a bien été supprimé de la liste');
+			loadData();
+		})
+		.error(function()
+		{
+			alert('une erreur est survenue sur l\'action demandée.');
+		});
 	}
 });
 
@@ -271,4 +289,11 @@ App.filter('startFrom', function() {
  }
  return [];
  }
+});
+
+$(document).ready(function(){
+
+	$('#lightbox').lightbox({
+		show: true
+	});
 });

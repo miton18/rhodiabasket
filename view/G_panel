@@ -28,13 +28,13 @@
 		    <div class="col-md-12" ng-show="filteredItems > 0">
 		        <table class="table table-striped table-bordered">
 		        <thead>
-			        <th>Catégorie&nbsp;<a ng-click="sort_by('categorie');"><i class="glyphicon glyphicon-sort"></i></a></th>
-			        <th>nom&nbsp;<a ng-click="sort_by('licence');"><i class="glyphicon glyphicon-sort"></i></a></th>
-			        <th>Prénom&nbsp;<a ng-click="sort_by('nom');"><i class="glyphicon glyphicon-sort"></i></a></th>
-			        <th>Licence&nbsp;<a ng-click="sort_by('prenom');"><i class="glyphicon glyphicon-sort"></i></a></th>
-			        <th>Telephone&nbsp;<a ng-click="sort_by('tel');"><i class="glyphicon glyphicon-sort"></i></a></th>
-			        <th>Ville&nbsp;<a ng-click="sort_by('ville');"><i class="glyphicon glyphicon-sort"></i></a></th>
-			        <th>E-Mail&nbsp;<a ng-click="sort_by('mail');"><i class="glyphicon glyphicon-sort"></i></a></th>
+			        <th>Catégorie&nbsp;<a ng-click="sort_by('categorie');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>nom&nbsp;<a ng-click="sort_by('licence');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Prénom&nbsp;<a ng-click="sort_by('nom');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Licence&nbsp;<a ng-click="sort_by('prenom');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Telephone&nbsp;<a ng-click="sort_by('tel');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Ville&nbsp;<a ng-click="sort_by('ville');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>E-Mail&nbsp;<a ng-click="sort_by('mail');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
 		        </thead>
 		        <tbody>
 		            <tr ng-repeat="data in filtered = (list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
@@ -52,9 +52,13 @@
 							    	Action <span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" role="menu" style="left: -120%;">
-									<li><a href="#" ng-click="change(data.ID)" >Modifier</a></li>
+									<li>
+										<a href="#"  data-toggle="lightbox" data-target="#lightbox" ng-click="change(data.ID)" >Modifier</a>
+									</li>
 									<li class="divider"></li>
-									<li><a href="#" ng-click="delete(data.ID)" >Supprimer</a></li>
+									<li>
+										<a href="#" ng-click="delete(data.ID)" >Supprimer</a>
+									</li>
 								</ul>
 							</div>
 		                </td>
@@ -73,5 +77,11 @@
 		 
 		    </div>
 		</div>
+	</div>
+</div>
+<div id="lightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+	<div class='lightbox-content'>
+		<img src="image.png">
+		<div class="lightbox-caption"><p>Your caption here</p></div>
 	</div>
 </div>
