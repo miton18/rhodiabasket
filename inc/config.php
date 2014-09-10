@@ -1,6 +1,6 @@
 <?php
 	define('D_sql', false);
-	define('ENV'  , 'prod');
+	define('ENV'  , 'debug');
 
 	if( ENV == 'debug' )
 	{

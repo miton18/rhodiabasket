@@ -17,161 +17,167 @@ body
 	.container
 	{
 		padding-bottom: 35px;
-	}
-	.row
-	{
-		margin-left: 0 !important;
-	}
-	.navbar-default 
-	{
-		background-color: @bgDefault;
-		border-color: @bgHighlight;
 
-		#brand
+		.row
 		{
-			img
+			margin-left: 0 !important;
+		}
+		.navbar-default 
+		{
+			background-color: @bgDefault;
+			border-color: @bgHighlight;
+
+			#brand
 			{
-				height: 35px;
-			}
-		}
-		.navbar-brand 
-		{
-			color: @colDefault;
-			padding-top: 10px;
-			&:hover, &:focus 
-			{ 
-				color: @colHighlight;
-			}
-		}
-		.navbar-text 
-		{
-			color: @colDefault; 
-		}
-		.navbar-nav 
-		{
-			> li 
-			{
-				> a 
+				img
 				{
-					color: @colDefault;
-					&:hover,  &:focus 
+					height: 35px;
+				}
+			}
+			.navbar-brand 
+			{
+				color: @colDefault;
+				padding-top: 10px;
+				&:hover, &:focus 
+				{ 
+					color: @colHighlight;
+				}
+			}
+			.navbar-text 
+			{
+				color: @colDefault; 
+			}
+			.navbar-nav 
+			{
+				> li 
+				{
+					> a 
 					{
-						color: @colHighlight; 
+						color: @colDefault;
+						&:hover,  &:focus 
+						{
+							color: @colHighlight; 
+						}
+					}
+				}
+				> .active 
+				{
+					> a, > a:hover, > a:focus 
+					{
+						color: @colHighlight;
+						background-color: @bgHighlight; 
+					}
+				}
+				> .open 
+				{
+					> a, > a:hover, > a:focus 
+					{
+						color: @colHighlight;
+						background-color: @bgHighlight; 
 					}
 				}
 			}
-			> .active 
+			.navbar-toggle 
 			{
-				> a, > a:hover, > a:focus 
+				border-color: @bgHighlight;
+				&:hover, &:focus 
 				{
-					color: @colHighlight;
 					background-color: @bgHighlight; 
 				}
-			}
-			> .open 
-			{
-				> a, > a:hover, > a:focus 
+				.icon-bar 
 				{
-					color: @colHighlight;
-					background-color: @bgHighlight; 
+					background-color: @colDefault; 
+				}
+			}
+			.navbar-collapse,
+			.navbar-form 
+			{
+				border-color: @colDefault; 
+			}
+			.navbar-link 
+			{
+				color: @colDefault;
+				&:hover 
+				{
+					color: @colHighlight; 
 				}
 			}
 		}
-		.navbar-toggle 
+		h2
 		{
-			border-color: @bgHighlight;
-			&:hover, &:focus 
+			color: white;
+		}
+		#facebook iframe
+		{
+			background-color: white;
+			.border-radius(10px);
+		}
+		#personnes div{
+			margin: 2%;
+			span
 			{
-				background-color: @bgHighlight; 
+				display: inline-block;
 			}
-			.icon-bar 
+			img
 			{
-				background-color: @colDefault; 
+				float: none;
 			}
-		}
-		.navbar-collapse,
-		.navbar-form 
-		{
-			border-color: @colDefault; 
-		}
-		.navbar-link 
-		{
-			color: @colDefault;
-			&:hover 
+			.caption
 			{
-				color: @colHighlight; 
-			}
-		}
-	}
-	h2
-	{
-		color: white;
-	}
-	#personnes div{
-		margin: 2%;
-		span
-		{
-			display: inline-block;
-		}
-		img
-		{
-			float: none;
-		}
-		.caption
-		{
-			text-align: center;
+				text-align: center;
 
-			aside
-			{
-				border: 1px solid @bgHighlight;
-				border-radius: 9px;
-				background-color: rgba(200,200,200,0.5);
-				padding: 3%;
+				aside
+				{
+					border: 1px solid @bgHighlight;
+					border-radius: 9px;
+					background-color: rgba(200,200,200,0.5);
+					padding: 3%;
+				}
 			}
 		}
-	}
-	blockquote
-	{
-		font-size: 0.9em !important;
-	}
-	#contact-div
-	{
-		color: @bleu;
-		background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
-		box-shadow: inset 0px -7px 6px 1px @bgDefault;
-		border-radius: 10px;
-		padding: 20px;
-		.text-center();
-	}
-	#map-canvas
-	{
-		height: 480px;
-		width: 100%;
-	}
-	#footer-Principal
-	{
-		bottom : 		  0;
-		left: 			  0;
-		padding-top: 	  10px;
-		position: 		  fixed !important;
-		background-color: @bgDefault; 
-		border: 1px solid @bgHighlight;
-		color: white;
-
-		div p a
+		blockquote
 		{
-			color: @bgHighlight;
-			
-			&:hover
+			font-size: 0.9em !important;
+		}
+		#contact-div
+		{
+			color: @bleu;
+			background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
+			box-shadow: inset 0px -7px 6px 1px @bgDefault;
+			border-radius: 10px;
+			padding: 20px;
+			.text-center();
+		}
+		#map-canvas
+		{
+			height: 480px;
+			width: 100%;
+		}
+		#footer-Principal
+		{
+			bottom : 		  0;
+			left: 			  0;
+			padding-top: 	  10px;
+			position: 		  fixed !important;
+			background-color: @bgDefault; 
+			border: 1px solid @bgHighlight;
+			color: white;
+
+			div p a
 			{
-				color: red;
+				color: @bgHighlight;
+				
+				&:hover
+				{
+					color: red;
+				}
 			}
 		}
-	}
-	//PANEL GESTION
-	div [data-ng-controller="gestion"]
-	{
-		background-color: @colHighlight ;
+		//PANEL GESTION
+		div [data-ng-controller="gestion"]
+		{
+			background-color: @colHighlight ;
+		}
 	}
 
 	@media (max-width: 1200px) and (min-width: 768px) // ecran moyen
@@ -255,4 +261,13 @@ body
 			}
 		}
 	}
+}
+
+
+// FUNCTIONS
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
 }

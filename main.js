@@ -260,11 +260,13 @@ App.controller('gestion', function( $scope, $http, $timeout )
 
 	//
 	$scope.change = function( id ){
-		alert("modif" + id);
-		/*$('#LBchange').lightbox(
-		{
-			show: true
-		});*/
+		$scope.modCat = ($scope.list[id])['categorie'];
+		$scope.modNom = ($scope.list[id])['nom'];
+		$scope.modPre = ($scope.list[id])['prenom'];
+		$scope.modLic = ($scope.list[id])['licence'];
+		$scope.modTel = ($scope.list[id])['tel'];
+		$scope.modVil = ($scope.list[id])['ville'];
+		$scope.modMai = ($scope.list[id])['mail'];
 	};
 	$scope.delete = function( id )
 	{
@@ -289,11 +291,4 @@ App.filter('startFrom', function() {
  }
  return [];
  }
-});
-
-$(document).ready(function(){
-
-	$('#lightbox').lightbox({
-		show: true
-	});
 });

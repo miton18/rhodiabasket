@@ -11,102 +11,108 @@ body {
 body .container {
   padding-bottom: 35px;
 }
-body .row {
+body .container .row {
   margin-left: 0 !important;
 }
-body .navbar-default {
+body .container .navbar-default {
   background-color: #4b58f5;
   border-color: #2113ca;
 }
-body .navbar-default #brand img {
+body .container .navbar-default #brand img {
   height: 35px;
 }
-body .navbar-default .navbar-brand {
+body .container .navbar-default .navbar-brand {
   color: #d7dbff;
   padding-top: 10px;
 }
-body .navbar-default .navbar-brand:hover,
-body .navbar-default .navbar-brand:focus {
+body .container .navbar-default .navbar-brand:hover,
+body .container .navbar-default .navbar-brand:focus {
   color: #ffffff;
 }
-body .navbar-default .navbar-text {
+body .container .navbar-default .navbar-text {
   color: #d7dbff;
 }
-body .navbar-default .navbar-nav > li > a {
+body .container .navbar-default .navbar-nav > li > a {
   color: #d7dbff;
 }
-body .navbar-default .navbar-nav > li > a:hover,
-body .navbar-default .navbar-nav > li > a:focus {
+body .container .navbar-default .navbar-nav > li > a:hover,
+body .container .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
 }
-body .navbar-default .navbar-nav > .active > a,
-body .navbar-default .navbar-nav > .active > a:hover,
-body .navbar-default .navbar-nav > .active > a:focus {
+body .container .navbar-default .navbar-nav > .active > a,
+body .container .navbar-default .navbar-nav > .active > a:hover,
+body .container .navbar-default .navbar-nav > .active > a:focus {
   color: #ffffff;
   background-color: #2113ca;
 }
-body .navbar-default .navbar-nav > .open > a,
-body .navbar-default .navbar-nav > .open > a:hover,
-body .navbar-default .navbar-nav > .open > a:focus {
+body .container .navbar-default .navbar-nav > .open > a,
+body .container .navbar-default .navbar-nav > .open > a:hover,
+body .container .navbar-default .navbar-nav > .open > a:focus {
   color: #ffffff;
   background-color: #2113ca;
 }
-body .navbar-default .navbar-toggle {
+body .container .navbar-default .navbar-toggle {
   border-color: #2113ca;
 }
-body .navbar-default .navbar-toggle:hover,
-body .navbar-default .navbar-toggle:focus {
+body .container .navbar-default .navbar-toggle:hover,
+body .container .navbar-default .navbar-toggle:focus {
   background-color: #2113ca;
 }
-body .navbar-default .navbar-toggle .icon-bar {
+body .container .navbar-default .navbar-toggle .icon-bar {
   background-color: #d7dbff;
 }
-body .navbar-default .navbar-collapse,
-body .navbar-default .navbar-form {
+body .container .navbar-default .navbar-collapse,
+body .container .navbar-default .navbar-form {
   border-color: #d7dbff;
 }
-body .navbar-default .navbar-link {
+body .container .navbar-default .navbar-link {
   color: #d7dbff;
 }
-body .navbar-default .navbar-link:hover {
+body .container .navbar-default .navbar-link:hover {
   color: #ffffff;
 }
-body h2 {
+body .container h2 {
   color: white;
 }
-body #personnes div {
+body .container #facebook iframe {
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+body .container #personnes div {
   margin: 2%;
 }
-body #personnes div span {
+body .container #personnes div span {
   display: inline-block;
 }
-body #personnes div img {
+body .container #personnes div img {
   float: none;
 }
-body #personnes div .caption {
+body .container #personnes div .caption {
   text-align: center;
 }
-body #personnes div .caption aside {
+body .container #personnes div .caption aside {
   border: 1px solid #2113ca;
   border-radius: 9px;
   background-color: rgba(200,200,200,0.5);
   padding: 3%;
 }
-body blockquote {
+body .container blockquote {
   font-size: 0.9em !important;
 }
-body #contact-div {
+body .container #contact-div {
   color: #3065a0;
   background-image: linear-gradient(to bottom,#e8e8e8 0%,#f5f5f5 100%);
   box-shadow: inset 0px -7px 6px 1px #4b58f5;
   border-radius: 10px;
   padding: 20px;
 }
-body #map-canvas {
+body .container #map-canvas {
   height: 480px;
   width: 100%;
 }
-body #footer-Principal {
+body .container #footer-Principal {
   bottom: 0;
   left: 0;
   padding-top: 10px;
@@ -115,13 +121,13 @@ body #footer-Principal {
   border: 1px solid #2113ca;
   color: white;
 }
-body #footer-Principal div p a {
+body .container #footer-Principal div p a {
   color: #2113ca;
 }
-body #footer-Principal div p a:hover {
+body .container #footer-Principal div p a:hover {
   color: red;
 }
-body div [data-ng-controller="gestion"] {
+body .container div [data-ng-controller="gestion"] {
   background-color: #ffffff;
 }
 @media (max-width: 1200px) and (min-width: 768px) {
