@@ -244,6 +244,14 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		});
 	}
 	loadData(); // initialise les données
+	$scope.cats = [
+		{ "nom" : "benjamin"	},
+		{ "nom" : "benjamine"	},
+		{ "nom" : "cadet"		},
+		{ "nom" : "cadette"		},
+		{ "nom" : "benjamin"	},
+
+	];
 
 	$scope.setPage = function(pageNo) {
 		$scope.currentPage = pageNo;
@@ -260,13 +268,14 @@ App.controller('gestion', function( $scope, $http, $timeout )
 
 	//
 	$scope.change = function( id ){
-		$scope.modCat = ($scope.list[id])['categorie'];
-		$scope.modNom = ($scope.list[id])['nom'];
-		$scope.modPre = ($scope.list[id])['prenom'];
-		$scope.modLic = ($scope.list[id])['licence'];
-		$scope.modTel = ($scope.list[id])['tel'];
-		$scope.modVil = ($scope.list[id])['ville'];
-		$scope.modMai = ($scope.list[id])['mail'];
+		$scope.modCat = ($scope.list[ id ])[ 'categorie'];
+		$scope.modNom = ($scope.list[ id ])[ 'nom'		];
+		$scope.modPre = ($scope.list[ id ])[ 'prenom'	];
+		$scope.modLic = ($scope.list[ id ])[ 'licence'	];
+		$scope.modTel = ($scope.list[ id ])[ 'tel'		];
+		$scope.modVil = ($scope.list[ id ])[ 'ville'	];
+		$scope.modMai = ($scope.list[ id ])[ 'mail'		];
+		$scope.modId  = ($scope.list[ id ])[ 'ID'		];
 	};
 	$scope.delete = function( id )
 	{
