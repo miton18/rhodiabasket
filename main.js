@@ -276,6 +276,18 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		$scope.modVil = ($scope.list[ id ])[ 'ville'	];
 		$scope.modMai = ($scope.list[ id ])[ 'mail'		];
 		$scope.modId  = ($scope.list[ id ])[ 'ID'		];
+		$scope.action = "Modification";
+	};
+	$scope.create = function(){
+		$scope.modCat = "";
+		$scope.modNom = "";
+		$scope.modPre = "";
+		$scope.modLic = "";
+		$scope.modTel = "";
+		$scope.modVil = "";
+		$scope.modMai = "";
+		$scope.modId  = "-1";
+		$scope.action = "Création";
 	};
 	$scope.delete = function( id )
 	{

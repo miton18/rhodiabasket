@@ -1,12 +1,13 @@
 <div data-ng-controller="gestion">
-	<div class="row">
-		<a href="index.php?P=G_log&amp;action=logout" class="btn btn-sm btn-warning">
-			   	<span class="glyphicon glyphicon-off"></span> Déconnexion
-		</a>
-		<a href="#" class="btn btn-sm col-sm-offset-9 btn-success">
-			<span class="glyphicon glyphicon-plus-sign"></span> Ajout de licencié
-		</a>
+	<div class="row" style="padding-top: 20px; padding-left: 20px; margin-right: 20px;">
+			<a href="index.php?P=G_log&amp;action=logout" class="btn btn-sm btn-warning">
+				   	<span class="glyphicon glyphicon-off"></span> Déconnexion
+			</a>
+			<a href="#modal-change" ng-click="create()" data-toggle="modal" class="btn btn-sm btn-success">
+				<span class="glyphicon glyphicon-plus-sign"></span> Ajout de licencié
+			</a>
 	</div>
+	<hr>
 	<div>
 		<div class="row" >
 			<div class="col-md-3 col-md-offset-1">Nombre de résultat par page:
@@ -44,10 +45,9 @@
 		                <td>{{data.nom}}</td>
 		                <td>{{data.prenom}}</td>
 		                <td>{{data.licence}}</td>
-		                <td>{{data.tel}}</td>
+		                <td>0{{data.tel}}</td>
 		                <td>{{data.ville}}</td>
 		                <td ng-init="data.index = $index">{{data.mail}}</td>
-		                <td>{{data.ID}}</td>
 		                <td>	
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -55,11 +55,15 @@
 								</button>
 								<ul class="dropdown-menu" role="menu" style="left: -120%;">
 									<li>
-										<a href="#modal-change" ng-click="change( data.index )" data-toggle="modal" >Modifier</a>
+										<a href="#modal-change" ng-click="change( data.index )" data-toggle="modal" >
+											Modifier
+										</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="#" ng-click="delete(data.ID)" >Supprimer</a>
+										<a ng-click="delete( data.ID )" >
+											Supprimer
+										</a>
 									</li>
 								</ul>
 							</div>
@@ -94,24 +98,28 @@
 				<form method="POST" action="inc/G_action.php" class="form-horizontal">
 					<div class="modal-header">
 	                    <div class="modal-header">
-							<h1>Modification d'un licencié</h1>
+	                    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								<span class="glyphicon glyphicon-remove"></span>
+							</button>
+							<h1 class="modal-title">{{action}} d'un licencié</h1>
+						</div>
+						<div class="modal-body">
 							<div class="col-sm-6 col-sm-offset-3" style="float: none;">
-								<input required name="nom"     type="text" value="{{modNom}}">
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">Nom</div>
-								    	<input required name="mail" 
+								    	<input required name="nom" 
 								    		   class="form-control" 
-								    		   type="email" 
+								    		   type="text" 
 								    		   value="{{modNom}}">
 									</div>
 								</div>
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">Prénom</div>
-								    	<input required name="mail" 
+								    	<input required name="prenom" 
 								    		   class="form-control" 
-								    		   type="email" 
+								    		   type="text" 
 								    		   value="{{modPre}}">
 									</div>
 								</div>
@@ -139,7 +147,8 @@
 								    	<input required name="tel" 
 								    		   class="form-control" 
 								    		   type="tel" 
-								    		   value="{{modTel}}">
+								    		   value="{{modTel}}"
+								    		   pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$">
 									</div>
 								</div>
 								<div class="form-group">
@@ -151,13 +160,28 @@
 								    		   value="{{modMai}}">
 									</div>
 								</div>
-								<select name="cat" class="form-control">
-									<option value="{{modcat}}" selected>{{modCat}}</option>
-									<option ng-repeat="cat in cats">{{cat.nom}}</option>
-								</select>
+								<div class="form-group">
+									<div class="input-group">
+										<div class="input-group-addon">Catégorie</div>
+										<select required name="cat" class="form-control input-xlarge">
+											<option ng-value="{{modcat}}" selected>{{modCat}}</option>
+											<option ng-repeat="cat in cats">{{cat.nom}}</option>
+										</select>
+									</div>
+								</div>
 								<input type="hidden" name="identifiant" ng-value="modId">
-								<input type="submit">
+								<div class="btn-group btn-group-justified">
+									<div class="btn-group">
+								    	<input type="submit" class="btn btn-success" value="Valider"/>
+									</div>
+									<div class="btn-group">
+										<button data-dismiss="modal" aria-hidden="true" class="btn btn-danger">Annuler</button>
+									</div>
+								</div>
 							</div>
+						</div>
+						<div class="modal-footer">
+							* Les modifications ne seront éfféctives que lorque vous appuirez sur "Valider"
 						</div>
 					</div>
 				</form>
