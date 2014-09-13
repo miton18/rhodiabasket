@@ -19,12 +19,13 @@
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-lightbox.min.css">
 		<link rel="stylesheet" type="text/css" href="style/main.css">
 
-		<meta charset="utf_8">
+		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Site web du club de basket du RHODIA"/>
 		<meta name="author" CONTENT="Auteur : Rémi collignon ;" />
 		<meta name="revisit-after" content="1 days" />
+		<meta name="google-site-verification" content="EyrTXAHP2jU4hp5H7NuWMy1wYtgd-9zQP2hUcHrVp80" />
 
 		<title>rhodiabasket - Site du club</title>
 

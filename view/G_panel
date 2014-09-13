@@ -23,21 +23,28 @@
 		        <input type="text" ng-model="search" ng-change="filter()" placeholder="Filtre" class="form-control" />
 		    </div>
 		    <div class="col-md-4 ">
-		        <h5>{{ filtered.length }} joueurs affiché sur {{ totalItems}} au total</h5>
+		        <h5><b>{{ filtered.length }}</b> joueurs affiché sur <b>{{ totalItems }}</b> au total</h5>
 		    </div>
 		</div>
 		<br/>
 		<div class="row">
-		    <div class="col-md-12" ng-show="filteredItems > 0">
+		    <div class="col-md-12" ng-show="filteredItems > 0" style="padding-right: 30px;">
 		        <table class="table table-striped table-bordered">
 		        <thead>
-			        <th>Catégorie&nbsp;<a ng-click="sort_by('categorie');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
-			        <th>nom&nbsp;<a ng-click="sort_by('licence');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
-			        <th>Prénom&nbsp;<a ng-click="sort_by('nom');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
-			        <th>Licence&nbsp;<a ng-click="sort_by('prenom');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
-			        <th>Telephone&nbsp;<a ng-click="sort_by('tel');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
-			        <th>Ville&nbsp;<a ng-click="sort_by('ville');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
-			        <th>E-Mail&nbsp;<a ng-click="sort_by('mail');"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Catégorie&nbsp;<a 	ng-click="sort_by('categorie');">
+			        	<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>nom&nbsp;<a 		ng-click="sort_by('licence');">
+			        	<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Prénom&nbsp;<a 		ng-click="sort_by('nom');">
+			        	<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Licence&nbsp;<a 	ng-click="sort_by('prenom');">
+			        	<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Telephone&nbsp;<a 	ng-click="sort_by('tel');">
+			        	<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>Ville&nbsp;<a 		ng-click="sort_by('ville');">
+			        	<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
+			        <th>E-Mail&nbsp;<a 		ng-click="sort_by('mail');">
+			        	<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></a></th>
 		        </thead>
 		        <tbody>
 		            <tr ng-repeat="data in filtered = (list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
@@ -77,18 +84,16 @@
 		            <h4>No customers found</h4>
 		        </div>
 		    </div>
-		    <div class="col-md-12" ng-show="filteredItems > 0">
-		        <div pagination="" 
-		        	 page="currentPage" 
-		        	 on-select-page="setPage(page)" 
-		        	 boundary-links="true" 
-		        	 total-items="filteredItems" 
-		        	 items-per-page="entryLimit" 
-		        	 class="pagination-small" 
-		        	 previous-text="&laquo;" 
-		        	 next-text="&raquo;">
-		        </div>		 
-		    </div>
+		       <div class="col-md-12" ng-show="totalItems > entryLimit ">
+			        <pagination  
+			        	page="currentPage" 
+			        	on-select-page="setPage(page)" 
+			        	boundary-links="true" 
+			        	total-items="totalItems" 
+			        	items-per-page="entryLimit" 
+			        	class="pagination-small">
+			        </pagination>			 
+			    </div>
 		</div>
 	</div>
 	<!-- FORMULAIRE LIGHTBOX -->

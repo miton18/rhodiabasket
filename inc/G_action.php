@@ -47,11 +47,20 @@
 			else // MODIFICATION
 			{
 				if (D_sql) echo 'modification';
-				$Insert("UPDATE table
-						 SET nom_colonne_1 = 'nouvelle valeur'
-						 WHERE condition");
+				$req = "UPDATE `joueur` 
+				        SET `categorie`	='$cat',
+				        	`licence`  	='$licence',
+				        	`nom`		='$nom',
+				        	`prenom`	='$prenom',
+				        	`tel`		='$tel',
+				        	`ville`		='$ville',
+				        	`mail`		='$mail'
+				        	WHERE `ID`	= '$id'";
+				echo $req;
+
+				Insert($req);
 			}
 		}
 	}
-	if( !D_sql) header("location:../index.php?P=gestion");
+	//if( !D_sql) header("location:../index.php?P=gestion");
 ?>

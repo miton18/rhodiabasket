@@ -235,12 +235,12 @@ App.controller('mapi', function( $scope )
 App.controller('gestion', function( $scope, $http, $timeout )
 {
 	function loadData(){
-		$http.get('inc/json.php').success(function(data){
-			$scope.list = data;
-			$scope.currentPage = 1; //current page
-			$scope.entryLimit = 20; //max no of items to display in a page
-			$scope.filteredItems = $scope.list.length; //Initially for no filter
-			$scope.totalItems = $scope.list.length;
+		$http.get('inc/json.php').success( function(data){
+			$scope.list 			= data;
+			$scope.currentPage 		= 1; //current page
+			$scope.entryLimit 		= 5; //max no of items to display in a page
+			$scope.filteredItems 	= $scope.list.length; //Initially for no filter
+			$scope.totalItems 		= $scope.list.length;
 		});
 	}
 	loadData(); // initialise les données
@@ -250,22 +250,20 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		{ "nom" : "cadet"		},
 		{ "nom" : "cadette"		},
 		{ "nom" : "benjamin"	},
-
 	];
 
 	$scope.setPage = function(pageNo) {
 		$scope.currentPage = pageNo;
 	};
 	$scope.filter = function() {
-	$timeout(function() {
-		$scope.filteredItems = $scope.filtered.length;
-	}, 10);
+		$timeout(function() {
+			$scope.filteredItems = $scope.filtered.length;
+		}, 1);
+	 };
+	 $scope.sort_by = function(predicate) {
+	 	$scope.predicate = predicate;
+	 	$scope.reverse = !$scope.reverse;
 	};
-	$scope.sort_by = function(predicate) {
-		$scope.predicate = predicate;
-		$scope.reverse = !$scope.reverse;
-	};
-
 	//
 	$scope.change = function( id ){
 		$scope.modCat = ($scope.list[ id ])[ 'categorie'];
@@ -305,11 +303,12 @@ App.controller('gestion', function( $scope, $http, $timeout )
 });
 
 App.filter('startFrom', function() {
- return function(input, start) {
- if(input) {
- start = +start; //parse to int
- return input.slice(start);
- }
- return [];
- }
+	return function(input, start) 
+	{
+ 		if(input) {
+ 			start = +start; //parse to int
+ 			return input.slice(start);
+ 		}
+ 		return [];
+ 	}
 });
