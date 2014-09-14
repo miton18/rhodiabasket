@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /index.php?P=gestion
+Sitemap: /sitemap.xml
