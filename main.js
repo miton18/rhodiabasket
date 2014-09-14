@@ -81,7 +81,7 @@ App.controller('equipe', function( $scope )
 			"poule" : "Benjamins",
 			"mail"  : "---",
 			"role"  : "Entraineur",
-			"photo" : "img/global/personne.png"
+			"photo" : "img/face/anthony.jpg"
 		},
 		{
 			"nom"   : "Charlotte",
@@ -245,11 +245,17 @@ App.controller('gestion', function( $scope, $http, $timeout )
 	}
 	loadData(); // initialise les données
 	$scope.cats = [
-		{ "nom" : "benjamin"	},
-		{ "nom" : "benjamine"	},
-		{ "nom" : "cadet"		},
-		{ "nom" : "cadette"		},
-		{ "nom" : "benjamin"	},
+		{ "nom" : "poussins"			},
+		{ "nom" : "poussines"			},
+		{ "nom" : "benjamins"			},
+		{ "nom" : "benjamines"			},
+		{ "nom" : "cadets"				},
+		{ "nom" : "cadettes"			},
+		{ "nom" : "minimes (garcon)"	},
+		{ "nom" : "minimes (fille)"		},
+		{ "nom" : "seniors (garcon)"	},
+		{ "nom" : "seniors (fille)"		}
+
 	];
 
 	$scope.setPage = function(pageNo) {

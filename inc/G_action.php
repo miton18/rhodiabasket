@@ -62,5 +62,5 @@
 			}
 		}
 	}
-	//if( !D_sql) header("location:../index.php?P=gestion");
+	if( !D_sql) header("location:../index.php?P=gestion");
 ?>
