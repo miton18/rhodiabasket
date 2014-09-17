@@ -123,7 +123,7 @@ App.controller('equipe', function( $scope )
 			"poule" : "Benjamins",
 			"mail"  : "---",
 			"role"  : "Entraineur",
-			"photo" : "img/global/personne.png"
+			"photo" : "img/face/malik.jpg"
 		},
 		{
 			"nom"   : "Nicolas",
@@ -147,6 +147,60 @@ App.controller('equipe', function( $scope )
 			"photo" : "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/t1.0-1/c27.0.160.160/p160x160/10308337_10202773982822199_7573237223106598054_n.jpg"
 		}*/
 	];
+});
+
+/*App.controller('galerie', function( $scope, $http )
+{
+	$scope.photos 		= [];
+	$scope.nb_photos 	= 0;
+	$scope.tab_photos   = new Array( $scope.nb_photos );
+	$scope.getTimes 	= function(){
+		return new Array( $scope.nb_photos );
+	};
+
+	$http({method: 'GET', url: 'inc/galerie_json.php', dataType: "json"
+	}).success(function(data, status, headers, config) 
+	  {
+	    $scope.photos = data;
+	    $scope.nb_photos 	= $scope.photos.length;
+	}).error(function(data, status, headers, config) 
+	  {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	 });
+});*/
+App.controller('galerie', function( $scope, $http )
+{
+	$scope.myInterval = 3000;
+	$scope.nb_photos = 0;
+	var slides = $scope.slides = [];
+
+	$http({method: 'GET', url: 'inc/galerie_json.php', dataType: "json"
+	}).success(function(data, status, headers, config) 
+	  {
+	    $scope.photos 	 = data;
+
+		$scope.nb_photos =  $scope.photos.length;
+
+		angular.forEach($scope.photos, function(value, key) {
+  			console.log(key + ': ' + value['nom']);
+  			$scope.addSlide( "img/photo/" + value['nom'] );
+		});
+
+
+	}).error(function(data, status, headers, config) 
+	  {
+	  	alert('error');
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	});
+	$scope.addSlide = function( img_name ) {
+	    var newWidth = 600 + slides.length;
+	    slides.push({
+	      image: img_name,
+	      text: img_name
+	    });
+	};
 });
 
 // CONTROLEUR VIEW CONTACT
@@ -254,7 +308,8 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		{ "nom" : "minimes (garcon)"	},
 		{ "nom" : "minimes (fille)"		},
 		{ "nom" : "seniors (garcon)"	},
-		{ "nom" : "seniors (fille)"		}
+		{ "nom" : "seniors (fille)"		},
+		{ "nom" : "dirigeant"			}
 
 	];
 

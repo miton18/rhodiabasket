@@ -1,0 +1,28 @@
+<div ng-controller="galerie">
+    <div class="row">
+        <div class="col-lg-6">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto; overflow: hidden;">
+                    <div class="carousel-caption">
+                        <h4>Photo {{$index}}</h4>
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" ng-repeat="photo in photos" >
+            <div class="thumbnail">
+                <img ng-src="img/photo/{{photo.nom}}" style="width: 294px; height: 193px; " alt="...">
+                <div class="caption">
+                    <p>{{photo.nom}}</p>
+                    <p>
+                        <a href="#" class="btn btn-primary" role="button">Button</a> 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

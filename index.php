@@ -32,7 +32,7 @@
 		<link rel="icon" type="image/png" href="img/global/logo-s.png" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="iimg/global/logo-s.png" /><![endif]-->
 
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 		<!--script src="//localhost/SOURCES/angular.min.js"></script-->
 	</head>
 	<body>
