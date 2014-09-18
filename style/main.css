@@ -112,6 +112,10 @@ body .container #map-canvas {
   height: 480px;
   width: 100%;
 }
+body .container .carousel-control.right,
+body .container .carousel-control.left {
+  color: aqua;
+}
 body .container #footer-Principal {
   bottom: 0;
   left: 0;

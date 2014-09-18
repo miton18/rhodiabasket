@@ -149,57 +149,58 @@ App.controller('equipe', function( $scope )
 	];
 });
 
-/*App.controller('galerie', function( $scope, $http )
+App.controller('galerie', function( $scope, $http, $animate, $modal)
 {
-	$scope.photos 		= [];
-	$scope.nb_photos 	= 0;
-	$scope.tab_photos   = new Array( $scope.nb_photos );
-	$scope.getTimes 	= function(){
-		return new Array( $scope.nb_photos );
-	};
+	$scope.myInterval 			= 3000;
+	$scope.nb_photos 			= 0;
+	$scope.photo_current 		= 0;
+	var slides = $scope.slides 	= [];
 
-	$http({method: 'GET', url: 'inc/galerie_json.php', dataType: "json"
-	}).success(function(data, status, headers, config) 
-	  {
-	    $scope.photos = data;
-	    $scope.nb_photos 	= $scope.photos.length;
-	}).error(function(data, status, headers, config) 
-	  {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	 });
-});*/
-App.controller('galerie', function( $scope, $http )
-{
-	$scope.myInterval = 3000;
-	$scope.nb_photos = 0;
-	var slides = $scope.slides = [];
+	$http(
+	    {method: 'GET', url: 'inc/galerie_json.php', dataType: "json" })
+		.success(function(data, status, headers, config) 
+		{
+	    	$scope.photos 	 = data;
 
-	$http({method: 'GET', url: 'inc/galerie_json.php', dataType: "json"
-	}).success(function(data, status, headers, config) 
-	  {
-	    $scope.photos 	 = data;
+			$scope.nb_photos =  $scope.photos.length;
 
-		$scope.nb_photos =  $scope.photos.length;
-
-		angular.forEach($scope.photos, function(value, key) {
-  			console.log(key + ': ' + value['nom']);
-  			$scope.addSlide( "img/photo/" + value['nom'] );
+			angular.forEach($scope.photos, function(value, key) {
+  				console.log(key + ': ' + value['nom']);
+  				$scope.addSlide( "img/photo/" + value['nom'] );
+			});
+		})
+		.error(function(data, status, headers, config) 
+	  	{
+	  		alert('error');
+	    	// called asynchronously if an error occurs
+	    	// or server returns response with an error status.
 		});
 
-
-	}).error(function(data, status, headers, config) 
-	  {
-	  	alert('error');
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	});
 	$scope.addSlide = function( img_name ) {
 	    var newWidth = 600 + slides.length;
 	    slides.push({
-	      image: img_name,
-	      text: img_name
+	    	image: img_name,
+	    	text: img_name
 	    });
+	};
+
+	$scope.$watch(function () {
+	  for (var i = 0; i < slides.length; i++) {
+	    if (slides[i].active) {
+	      return slides[i];
+	    }
+	  }
+	}, function (currentSlide, previousSlide) {
+	  if (currentSlide !== previousSlide) {
+	    console.log('currentSlide:', currentSlide);
+	    $scope.current_img = currentSlide.text;
+	    //alert($scope.current_img );
+	  }
+	});
+
+	$scope.keep_photo = function ( str )
+	{
+		$scope.photo_current = str;
 	};
 });
 
@@ -372,4 +373,10 @@ App.filter('startFrom', function() {
  		}
  		return [];
  	}
+});
+
+App.filter('extensionLess', function () {
+        return function (text, start, end) {
+                return String(text).substring( start , text.length - end); // 10 pour le chemin et 3 pour l'extension
+        }
 });
