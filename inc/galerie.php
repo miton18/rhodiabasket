@@ -1,17 +1,15 @@
 <?php
  /* ouverture du repertoire courant */
-
   $photos = array();
-
-  $SD = scandir("../img/photo");
+  $SD 		= scandir("../img/photo");
+  $i      = 0 ;
+  $nb     = 0;
 
   array_shift($SD);
   array_shift($SD);
 
-  $i = 0 ;
   foreach ($SD as $k) 
   {
-
 	$photos[$i] = utf8_encode($k);
 	$i ++;
   }
@@ -28,6 +26,7 @@
   foreach ($SD as $key => $val) 
   {
   	$chaine .= '{ "nom" : "'. $val .'"},' ;
+    $nb ++;
   }
 
   $chaine = substr( $chaine, 0, strlen( $chaine ) - 1 );
@@ -37,5 +36,5 @@
 
   fclose( $fp );
 
-  echo($chaine);
+  echo( "l'import c'est bien passé: \n Nombre de photos traitées: " . $nb );
 ?>

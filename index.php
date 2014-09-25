@@ -12,6 +12,7 @@
 ?>
 <html data-ng-app="App">
 	<head>
+		<title>rhodiabasket - Site du club</title>
 		<!--	CSS	-->
 		<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-theme.css">
@@ -22,12 +23,12 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Site web du club de basket du RHODIA"/>
-		<meta name="author" CONTENT="Auteur : Rémi collignon ;" />
-		<meta name="revisit-after" content="1 days" />
 		<meta name="google-site-verification" content="EyrTXAHP2jU4hp5H7NuWMy1wYtgd-9zQP2hUcHrVp80" />
-
-		<title>rhodiabasket - Site du club</title>
+		<!-- SEO -->
+		<meta name="description" content="Site web du club de Basket du RHODIA à Salaise-sur-sanne"/>
+		<meta name="author" CONTENT="Rémi collignon" />
+		<meta name="revisit-after" content="1 days" />
+		<meta name="keywords" content="basket,sport,equipe,rhodia,salaise-sur-sanne,roussillon,le peage,">
 
 		<link rel="icon" type="image/png" href="img/global/logo-s.png" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="iimg/global/logo-s.png" /><![endif]-->
@@ -137,7 +138,6 @@
 		<script type="text/javascript" src="ui-bootstrap-tpls-0.11.0.min.js">
 		</script>		
 		<script type="text/javascript" src="main.js">
-		</script>
-		
+		</script>	
 	</body>
 </html>

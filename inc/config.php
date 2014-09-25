@@ -1,6 +1,6 @@
 <?php
 	define('D_sql', false);
-	define('ENV'  , 'debug');
+	define('ENV'  ,  $_SERVER['HTTP_HOST'] == "localhost" ? 'debug' : 'prod' );
 
 	if( ENV == 'debug' )
 	{

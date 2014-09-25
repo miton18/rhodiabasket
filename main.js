@@ -158,7 +158,7 @@ App.controller('galerie', function( $scope, $http, $animate, $modal)
 
 	$http(
 	    {method: 'GET', url: 'inc/galerie_json.php', dataType: "json" })
-		.success(function(data, status, headers, config) 
+		.success( function( data ) 
 		{
 	    	$scope.photos 	 = data;
 
@@ -171,7 +171,7 @@ App.controller('galerie', function( $scope, $http, $animate, $modal)
 		})
 		.error(function(data, status, headers, config) 
 	  	{
-	  		alert('error');
+	  		alert('error' + status);
 	    	// called asynchronously if an error occurs
 	    	// or server returns response with an error status.
 		});
@@ -360,6 +360,18 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		.error(function()
 		{
 			alert('une erreur est survenue sur l\'action demandée.');
+		});
+	}
+
+	$scope.refresh_photos = function()
+	{
+		$http.get('inc/galerie.php').success( function(data){
+			$scope.message 			= data;
+			alert(data);
+		})
+		.error( function()
+		{
+			console.log("erreur de rechargement de la galerie");
 		});
 	}
 });
