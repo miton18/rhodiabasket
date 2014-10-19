@@ -3,13 +3,13 @@
 		<a 		  class="btn btn-sm btn-danger"		href="index.php?P=G_log&amp;action=logout" >
 			<span class="glyphicon glyphicon-off"></span> Déconnexion
 		</a>
-		<a 	class="btn btn-sm btn-success"		href="#modal-change" 	ng-click="create()" 	data-toggle="modal" >
-			<span class="glyphicon glyphicon-plus-sign"></span> Ajout de licencié
+		<a 			class="btn btn-sm btn-success"	href="#modal-change" ng-click="create()" data-toggle="modal" >
+			<span 	class="glyphicon glyphicon-plus-sign"></span> Ajout de licencié
 		</a>
-		<button class="btn btn-warning" ng-click="refresh_photos()">
-			<span class="glyphicon glyphicon-camera"></span> Recharger la galerie de photos
+		<button 	class="btn btn-warning" ng-click="refresh_photos()">
+			<span 	class="glyphicon glyphicon-camera"></span> Recharger la galerie de photos
 		</button>
-		<?= session_cache_expire () . "minutes"?>
+		<a 			class="btn btn-primary btn-sm" href="inc/resume.xls.php"><i class="icon-white icon-hdd"></i> Télécharger au format EXCEL</a>
 	</div>
 	<hr>
 	<div>

@@ -1,6 +1,7 @@
 <?php
+	session_cache_expire(30);
 	session_start();
-	ini_set('session.gc_maxlifetime', 1200);
+
 	require_once('inc/bdd.php');
 
 	if ( !empty ($_POST['user']) and !empty ($_POST['pass']) )
