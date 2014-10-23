@@ -56,7 +56,14 @@
 					</div>
 					<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li><a href="index.php">Accueil</a></li>
+							<li>
+								<a href="index.php">Accueil</a>
+							</li>
+							<li>
+								<a href="index.php?P=news">
+								<span class="label label-danger">1</span>
+								Evènements</a>
+							</li>
 							<li id="planM" >
 								<a href="index.php?P=planM">Planning des matchs 
 								</a>
@@ -140,13 +147,14 @@
 		<script type="text/javascript" src="main.js">
 		</script>	
 		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  	ga('create', 'UA-55921970-1', 'auto');
-		  	ga('send', 'pageview');
+		  ga('create', 'UA-55921970-2', 'auto');
+		  ga('send', 'pageview');
+
 		</script>
 	</body>
 </html>
