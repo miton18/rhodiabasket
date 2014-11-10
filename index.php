@@ -125,6 +125,25 @@
 					require_once("view/acceuil");
 				}
 			?>			
+
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4" style="background-color: white;padding: 15px;" >
+					<form method="post" action="http://rhodiabasket.fr/newsletter.php">
+						<div class="input-group">
+							<span class="input-group-addon">@</span>
+							<input type="text" name="email" maxlength="100" class="form-control" placeholder="Adresse E-mail">
+						</div>
+						<input type="hidden" name="format" value="2">
+						<input type="hidden" name="liste" value="1" />
+						<br>
+						<input type="radio" name="action" value="inscription" checked="checked" /> Inscription <br />
+						<input type="radio" name="action" value="setformat" /> Changer de format <br />
+						<input type="radio" name="action" value="desinscription" /> Désinscription <br />
+						<input class="btn btn-primary btn-lg" type="submit" name="wanewsletter" value="Valider" />
+					</form>
+				</div>
+			</div>
+
 			<footer id="footer-Principal" class="col-sm-12">
 					<div class="container-fluid">
 						<p class="muted credit text-center">
