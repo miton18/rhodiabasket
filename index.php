@@ -133,10 +133,8 @@
 							<p id="notif"></p>
 							<div class="input-group">
 								<span class="input-group-addon">@</span>
-								<input type="text" name="email" maxlength="100" class="form-control" placeholder="Adresse E-mail">
+								<input type="text" id="email" maxlength="100" class="form-control" placeholder="Adresse E-mail">
 							</div>
-							<input type="hidden" name="format" value="2">
-							<input type="hidden" name="liste" value="1" />
 							<br>
 							<input type="radio" name="action" value="inscription" checked="checked" /> Inscription <br />
 							<input type="radio" name="action" value="desinscription" /> Désinscription <br />
@@ -186,7 +184,13 @@
 					e.preventDefault();
 					$.ajax({
 						url : form.attr('action'),
-						type: 'POST'
+						type: 'POST',
+						data: {
+							email: $('#email').val(),
+							liste: 1,
+							format: 2,
+							action: 'inscription'
+						}
 					})
 					.done(function()
 					{
