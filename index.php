@@ -61,7 +61,6 @@
 							</li>
 							<li>
 								<a href="index.php?P=news">
-								<span class="label label-danger">1</span>
 								Evènements</a>
 							</li>
 							<li id="planM" >
@@ -127,24 +126,27 @@
 			?>			
 
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4" style="background-color: white;padding: 15px;" >
-					<form method="post" action="http://rhodiabasket.fr/newsletter.php">
-						<div class="input-group">
-							<span class="input-group-addon">@</span>
-							<input type="text" name="email" maxlength="100" class="form-control" placeholder="Adresse E-mail">
-						</div>
-						<input type="hidden" name="format" value="2">
-						<input type="hidden" name="liste" value="1" />
-						<br>
-						<input type="radio" name="action" value="inscription" checked="checked" /> Inscription <br />
-						<input type="radio" name="action" value="setformat" /> Changer de format <br />
-						<input type="radio" name="action" value="desinscription" /> Désinscription <br />
-						<input class="btn btn-primary btn-lg" type="submit" name="wanewsletter" value="Valider" />
+				<div class="col-sm-4 col-sm-offset-4" style="background-color: white;padding-bottom: 30px;padding-top: 30px;" >
+					<form method="post" action="http://rhodiabasket.fr/NEWSLETTER/subscribe.php" target="_BLANK" id="news_form">
+						<fieldset>
+							<legend>Inscription à la newsletter</legend>
+							<p id="notif"></p>
+							<div class="input-group">
+								<span class="input-group-addon">@</span>
+								<input type="text" name="email" maxlength="100" class="form-control" placeholder="Adresse E-mail">
+							</div>
+							<input type="hidden" name="format" value="2">
+							<input type="hidden" name="liste" value="1" />
+							<br>
+							<input type="radio" name="action" value="inscription" checked="checked" /> Inscription <br />
+							<input type="radio" name="action" value="desinscription" /> Désinscription <br />
+							<input class="btn btn-primary btn-lg" type="submit" name="wanewsletter" value="Valider" />
+						</fieldset>
 					</form>
 				</div>
 			</div>
 
-			<footer id="footer-Principal" class="col-sm-12">
+			<footer id="footer-Principal" class="col-sm-12" style="z-index:100000;">
 					<div class="container-fluid">
 						<p class="muted credit text-center">
 							<a href="index.php?P=gestion">Gestion des licensiés</a>
@@ -173,6 +175,29 @@
 
 		  ga('create', 'UA-55921970-2', 'auto');
 		  ga('send', 'pageview');
+
+		</script>
+		<script>
+			$(document).ready( function()
+			{
+				$('#news_form').on('submit', function(e)
+				{
+					var form = $(this);
+					e.preventDefault();
+					$.ajax({
+						url : form.attr('action'),
+						type: 'POST'
+					})
+					.done(function()
+					{
+						$('#notif').html("Pris en compte!");
+					})
+					.fail(function()
+					{
+						alert( "Une erreur s'est produite, l'action demandée n'a pas été éxécutée" );
+					});
+				});
+			});
 
 		</script>
 	</body>
