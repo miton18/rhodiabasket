@@ -34,6 +34,7 @@ App.controller('navControl', function( $scope )
 			    }, 'slow' );
 			}  
 		});
+
 	});
 });
 

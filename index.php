@@ -178,6 +178,9 @@
 		<script>
 			$(document).ready( function()
 			{
+				/*BONNE ANNEE*/
+				$('#myModal').modal();
+
 				$('#news_form').on('submit', function(e)
 				{
 					var form = $(this);

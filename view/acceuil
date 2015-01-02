@@ -1,14 +1,14 @@
 <div class="row" >
 	<div class="col-sm-6">
 		<h2>Bienvenue au club !</h2>
-		<div class="alert alert-info alert-dismissible col-sm-10" role="alert">
+		<!--div class="alert alert-info alert-dismissible col-sm-10" role="alert">
 	  		<button type="button" class="close" data-dismiss="alert">
 	  			<span aria-hidden="true">&times;</span>
 	  			<span class="sr-only">Fermer</span>
 	  		</button>
 		  <strong>Exceptionnel!</strong>Matinée DIOTS CRU ou CUITs
 		  	<a href="index.php?P=news">Lien de l'évènement</a>
-		</div>
+		</div-->
 	</div>
 	<div class="col-sm-6 hidden-xs" >
 		<img class="col-sm-3 col-sm-offset-8" alt="logo du rhodiabasket" src="img/global/logo-l.png">
@@ -42,3 +42,33 @@
 		allowTransparency="true">Vous utilisez un bloqeur de pub, désactivez le pour voir le fil Facebook.</iframe>
 	</div>
 </div>
+
+
+<!-- BONNE ANNEE -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Bonne année</h4>
+      </div>
+      <div class="modal-body">
+      	<blockquote class="text-justify">
+        	Que 2015 soit votre année,<br>
+			Que le bonheur soit votre allié,<br>
+			Que le sourire soit votre invité,<br>
+			Et que la joie embellisse vos journées.<br>
+			Je vous souhaite une merveilleuse année !<br>
+			<div class="text-center">
+				<p style="margin-left:-90px;">Edith</p>
+			</div>
+		  </blockquote>
+     	<img src="img/ba.jpg" style="width: 100%;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
