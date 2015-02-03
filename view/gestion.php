@@ -4,11 +4,11 @@
 
 		if ( isset( $_SESSION['login']) and $_SESSION['login'] == true)
 		{
-			require_once("view/G_panel");
+			require_once("view/G_panel.php");
 		}
 		else
 		{
-			require_once("view/G_login");
+			require_once("view/G_login.php");
 		}
 	?>
 
