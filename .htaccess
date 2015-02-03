@@ -1,0 +1,7 @@
+
+RewriteOptions inherit
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^.*$
+RewriteRule ^remi$ "http\:\/\/remi\.rcdinfo\.fr\/" [R=301,L]
+
