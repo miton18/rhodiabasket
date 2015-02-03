@@ -110,18 +110,18 @@
 			<?php
 				if ( isset ($_GET['P']) and $_GET['P'] != "" )
 				{
-					if ( file_exists ("view/" . $_GET['P']) or file_exists ("view\\" . $_GET['P']) )
+					if ( file_exists ("view/" . $_GET['P'] . '.php') or file_exists ("view\\" . $_GET['P']) . '.php' )
 					{
-						require_once ("view/" . $_GET['P']);
+						require_once ("view/" . $_GET['P'] . '.php');
 					}
 					else
 					{
-						require_once ("view/404");
+						require_once ("view/404.php" );
 					}
 				}
 				else
 				{
-					require_once("view/acceuil");
+					require_once("view/acceuil.php");
 				}
 			?>			
 

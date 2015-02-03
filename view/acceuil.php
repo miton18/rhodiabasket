@@ -32,13 +32,13 @@
 				</p>
 				<footer>
 					<cite title="Source Title">Edith -- Présidente</cite>
-				</footer> 
+				</footer>
 			</blockquote>
 		</div>
 	</div>
 	<div id="facebook" class="col-sm-4 col-sm-offset-4">
-		<iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FRhodiaClub%2F700665929998834&amp;width=300&amp;height=540&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=true" scrolling="no" frameborder="0" 
-		style="border:none; overflow:hidden; width:300px; height:540px;" 
+		<iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FRhodiaClub%2F700665929998834&amp;width=300&amp;height=540&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=true" scrolling="no" frameborder="0"
+		style="border:none; overflow:hidden; width:300px; height:540px;"
 		allowTransparency="true">Vous utilisez un bloqeur de pub, désactivez le pour voir le fil Facebook.</iframe>
 	</div>
 </div>

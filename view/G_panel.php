@@ -58,7 +58,7 @@
 		                <td>0{{data.tel}}</td>
 		                <td>{{data.ville}}</td>
 		                <td ng-init="data.index = $index">{{data.mail}}</td>
-		                <td>	
+		                <td>
 							<div 		class="btn-group">
 								<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
 							    	Action <span class="caret"></span>
@@ -106,45 +106,45 @@
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">Nom</div>
-								    	<input required name="nom" 
-								    		   class="form-control" 
-								    		   type="text" 
+								    	<input required name="nom"
+								    		   class="form-control"
+								    		   type="text"
 								    		   value="{{modNom}}">
 									</div>
 								</div>
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">Prénom</div>
-								    	<input required name="prenom" 
-								    		   class="form-control" 
-								    		   type="text" 
+								    	<input required name="prenom"
+								    		   class="form-control"
+								    		   type="text"
 								    		   value="{{modPre}}">
 									</div>
 								</div>
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">N° Licence</div>
-								    	<input required name="licence" 
-								    		   class="form-control" 
-								    		   type="text" 
+								    	<input required name="licence"
+								    		   class="form-control"
+								    		   type="text"
 								    		   value="{{modLic}}">
 									</div>
 								</div>
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">Ville</div>
-								    	<input required name="ville" 
-								    		   class="form-control" 
-								    		   type="text" 
+								    	<input required name="ville"
+								    		   class="form-control"
+								    		   type="text"
 								    		   value="{{modVil}}">
 									</div>
 								</div>
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">Téléphone</div>
-								    	<input required name="tel" 
-								    		   class="form-control" 
-								    		   type="tel" 
+								    	<input required name="tel"
+								    		   class="form-control"
+								    		   type="tel"
 								    		   value="{{modTel}}"
 								    		   pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$">
 									</div>
@@ -152,9 +152,9 @@
 								<div class="form-group">
 								    <div class="input-group">
 								    	<div class="input-group-addon">@ E-Mail</div>
-								    	<input required name="mail" 
-								    		   class="form-control" 
-								    		   type="email" 
+								    	<input required name="mail"
+								    		   class="form-control"
+								    		   type="email"
 								    		   value="{{modMai}}">
 									</div>
 								</div>
