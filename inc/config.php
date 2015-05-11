@@ -1,6 +1,6 @@
 <?php
-	define('D_sql', false);
 	define('ENV'  ,  $_SERVER['HTTP_HOST'] == "localhost" ? 'debug' : 'prod' );
+	define('D_sql', false);
 
 	if( ENV == 'debug' )
 	{
@@ -11,7 +11,8 @@
 	}
 	if( ENV == 'prod')
 	{
-		define('host'  , 'sql-02.redheberg.com'); // test local
+		//define('host'  , 'sql-02.redheberg.com'); // test local
+		define('host'  , 'mysql-4');
 		define('dbname', 'rhodiaba_web');
 		define('userdb', 'rhodiaba_user');
 		define('passwd', 'sqlpassword');	

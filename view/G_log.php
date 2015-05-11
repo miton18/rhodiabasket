@@ -1,6 +1,7 @@
 <?php
 	//session_cache_expire(30);
 	session_start();
+	session_set_cookie_params( 60 * 60 );
 
 	require_once('inc/bdd.php');
 
@@ -25,6 +26,6 @@
 		session_destroy();
 	}
 
-
 	header("location:index.php?P=gestion");
+	echo('redirect P=gestion');
 ?>

@@ -1,4 +1,20 @@
-var App = angular.module('App', ['ui.bootstrap'] );
+var App = angular.module('App', ['ui.bootstrap', 'ui.bootstrap.datetimepicker'] );
+
+
+var Cats = [
+		{ "nom" : "poussins"			},
+		{ "nom" : "poussines"			},
+		{ "nom" : "benjamins"			},
+		{ "nom" : "benjamines"			},
+		{ "nom" : "cadets"				},
+		{ "nom" : "cadettes"			},
+		{ "nom" : "minimes (garcon)"	},
+		{ "nom" : "minimes (fille)"		},
+		{ "nom" : "seniors (garcon)"	},
+		{ "nom" : "seniors (fille)"		},
+		{ "nom" : "dirigeant"			}
+	];
+
 
 // CONTROLEUR NAVIGATION
 App.controller('navControl', function( $scope )
@@ -150,6 +166,7 @@ App.controller('equipe', function( $scope )
 	];
 });
 
+// CONTROLLER VIEW PHOTOS
 App.controller('galerie', function( $scope, $http, $animate, $modal)
 {
 	$scope.myInterval 			= 3000;
@@ -288,7 +305,8 @@ App.controller('mapi', function( $scope )
 	google.maps.event.addDomListener(window, 'load', initialize);
 });
 
-App.controller('gestion', function( $scope, $http, $timeout )
+// CONTROLLER VIEW GESTION MEMBRES
+App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 {
 	function loadData(){
 		$http.get('inc/json.php').success( function(data){
@@ -300,7 +318,8 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		});
 	}
 	loadData(); // initialise les données
-	$scope.cats = [
+	$scope.cats = Cats;
+	/*$scope.cats = [
 		{ "nom" : "poussins"			},
 		{ "nom" : "poussines"			},
 		{ "nom" : "benjamins"			},
@@ -312,8 +331,7 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		{ "nom" : "seniors (garcon)"	},
 		{ "nom" : "seniors (fille)"		},
 		{ "nom" : "dirigeant"			}
-
-	];
+	];*/
 
 	$scope.setPage = function(pageNo) {
 		$scope.currentPage = pageNo;
@@ -376,6 +394,64 @@ App.controller('gestion', function( $scope, $http, $timeout )
 		});
 	}
 });
+
+
+App.controller('match_gestion', function( $rootScope, $scope, $http ){
+
+	$scope.cats = Cats;
+	console.log($scope.cats );
+
+	loadData();
+
+	$scope.change = function ( index )
+	{
+		console.info( "change: " + $scope.matchs[ index ].id ); // LOG
+		$scope.editData = $scope.matchs[index];
+		var date = new Date( $scope.editData.date );
+		$scope.editData.jour  = date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear();
+		$scope.editData.heure = date.getHours() + ":" + date.getMinutes();
+	}
+	$scope.delete = function ( index )
+	{
+		console.info( "delete: " + $scope.matchs[ index ].id );
+	}
+
+	$scope.saveEdit = function() {
+
+	}
+	$scope.cancel() {
+
+	}
+	function loadData() {
+		$http({
+			url: 'inc/M_action.php',
+			method: "POST",
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+			data: $.param({match_action : 'listAll'})
+		})
+		.success(function(response) {
+				$scope.matchs = response;
+				 angular.forEach( $scope.matchs, function(val, key) {
+        			val.date = new Date( val.date );
+    			});
+				console.log( $scope.matchs );
+		},
+		function(response) { // optional
+				console.error(response);
+		});
+	}
+
+
+	$scope.isOpen = false;
+
+    $scope.openCalendar = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        $scope.isOpen = true;
+    }
+});
+
 
 App.filter('startFrom', function() {
 	return function(input, start) 

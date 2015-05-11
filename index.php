@@ -33,7 +33,8 @@
 		<link rel="icon" type="image/png" href="img/global/logo-s.png" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="iimg/global/logo-s.png" /><![endif]-->
 
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+		<!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script-->
+		<script src="angular.min.js"></script>
 		<!--script src="//localhost/SOURCES/angular.min.js"></script-->
 	</head>
 	<body>
@@ -108,9 +109,9 @@
 				</div>
 			</nav>
 			<?php
-				if ( isset ($_GET['P']) and $_GET['P'] != "" )
+				if ( !empty($_GET['P']) and $_GET['P'] != "" )
 				{
-					if ( file_exists ("view/" . $_GET['P'] . '.php') or file_exists ("view\\" . $_GET['P']) . '.php' )
+					if ( file_exists ("view/" . $_GET['P'] . '.php') )
 					{
 						require_once ("view/" . $_GET['P'] . '.php');
 					}
@@ -163,6 +164,8 @@
 		</script>
 		<script type="text/javascript" src="ui-bootstrap-tpls-0.11.0.min.js">
 		</script>		
+		<script type="text/javascript" src="datetime-picker.js" >
+		</script>
 		<script type="text/javascript" src="main.js">
 		</script>	
 		<script>

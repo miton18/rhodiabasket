@@ -10,6 +10,7 @@
 			<span 	class="glyphicon glyphicon-camera"></span> Recharger la galerie de photos
 		</button>
 		<a 			class="btn btn-primary btn-sm" href="inc/resume.xls.php"><i class="icon-white icon-hdd"></i> Télécharger au format EXCEL</a>
+		<a 			class="btn btn-primary btn-sm" href="index.php?P=G_match"><i class="glyphicon glyphicon-book"></i> Gestion des matches</a>
 	</div>
 	<hr>
 	<div>
