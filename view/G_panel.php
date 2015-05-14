@@ -1,4 +1,4 @@
-<div data-ng-controller="gestion">
+<div data-ng-controller="gestion" style="background-color: white;">
 	<div 		  class="row" style="padding-top: 20px; padding-left: 20px; margin-right: 20px;">
 		<a 		  class="btn btn-sm btn-danger"		href="index.php?P=G_log&amp;action=logout" >
 			<span class="glyphicon glyphicon-off"></span> Déconnexion

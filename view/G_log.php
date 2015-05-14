@@ -1,9 +1,9 @@
 <?php
 	//session_cache_expire(30);
 	session_start();
-	session_set_cookie_params( 60 * 60 );
 
-	require_once('inc/bdd.php');
+
+	require_once('../inc/bdd.php');
 
 	if ( !empty ($_POST['user']) and !empty ($_POST['pass']) )
 	{
@@ -17,15 +17,17 @@
 		{
 			$_SESSION['login']		 = true;
 			$_SESSION['login_error'] = false;
+			header("location:../index.php?P=G_panel");
 		}
-		else
+		else {
 			$_SESSION['login'] 		 = false;
+			header("location:../index.php?P=gestion");
+		}
 	}
 	if(isset( $_GET['action'] ) and $_GET['action'] == "logout")
 	{
 		session_destroy();
 	}
 
-	header("location:index.php?P=gestion");
-	echo('redirect P=gestion');
+	header("location:../index.php?P=gestion");
 ?>

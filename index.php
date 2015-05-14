@@ -1,4 +1,8 @@
-<?php
+<!DOCTYPE HTML>
+<?php session_start()
+	//session_set_cookie_params( 60 * 60 );
+?>
+<!--?php
 	require 'inc/lessc.inc.php';
 	try 
 	{
@@ -9,11 +13,11 @@
 	{
 	    exit('lessc fatal error:'.$ex->getMessage());
 	}
-?>
-<html data-ng-app="App">
+?-->
+<html data-ng-app="App" lang="fr">
 	<head>
 		<title>rhodiabasket - Site du club</title>
-		<!--	CSS	-->
+		<!-- CSS	-->
 		<link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-theme.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-responsive.min.css">
@@ -21,21 +25,20 @@
 		<link rel="stylesheet" type="text/css" href="style/main.css">
 
 		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="google-site-verification" content="EyrTXAHP2jU4hp5H7NuWMy1wYtgd-9zQP2hUcHrVp80" />
+		<meta http-equiv="Content-Type" 		content="text/html; charset=UTF-8" />
+		<meta name="viewport" 					content="width=device-width, initial-scale=1">
+		<meta name="google-site-verification" 	content="EyrTXAHP2jU4hp5H7NuWMy1wYtgd-9zQP2hUcHrVp80" />
 		<!-- SEO -->
-		<meta name="description" content="Site web du club de Basket du RHODIA à Salaise-sur-sanne"/>
-		<meta name="author" CONTENT="Rémi collignon" />
-		<meta name="revisit-after" content="1 days" />
-		<meta name="keywords" content="basket,sport,equipe,rhodia,salaise-sur-sanne,roussillon,le peage,">
-
+		<meta name="description" 				content="Site web du club de Basket du RHODIA à Salaise-sur-sanne"/>
+		<meta name="author" 					content="Rémi collignon" />
+		<meta name="revisit-after" 				content="1 days" />
+		<meta name="keywords" 					content="basket,sport,equipe,rhodia,salaise-sur-sanne,roussillon,le peage,planning,matchs">
+		<!-- ICONE -->
 		<link rel="icon" type="image/png" href="img/global/logo-s.png" />
 		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="iimg/global/logo-s.png" /><![endif]-->
 
 		<!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script-->
 		<script src="angular.min.js"></script>
-		<!--script src="//localhost/SOURCES/angular.min.js"></script-->
 	</head>
 	<body>
 		<div class="container">
@@ -124,8 +127,7 @@
 				{
 					require_once("view/acceuil.php");
 				}
-			?>			
-
+			?>
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4" style="background-color: white;padding-bottom: 30px;padding-top: 30px;" >
 					<form method="post" action="http://rhodiabasket.fr/NEWSLETTER/subscribe.php" target="_BLANK" id="news_form">
@@ -166,6 +168,7 @@
 		</script>		
 		<script type="text/javascript" src="datetime-picker.js" >
 		</script>
+		<!--  CONTROLLEURS  -->
 		<script type="text/javascript" src="main.js">
 		</script>	
 		<script>

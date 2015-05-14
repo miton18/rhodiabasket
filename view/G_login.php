@@ -1,6 +1,7 @@
 <div class="row">
 	<div class="col-sm-4 col-sm-offset-4">
-		<form class="login" method="POST" action="index.php?P=G_log">
+		<!--form class="login" method="POST" action="index.php?P=G_log"-->
+		<form class="login" method="POST" action="view/G_log.php">
 			<div class="login-screen">
 				<div class="app-title">
 					<h1>Connexion entraineurs</h1>

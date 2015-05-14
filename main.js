@@ -319,19 +319,6 @@ App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 	}
 	loadData(); // initialise les données
 	$scope.cats = Cats;
-	/*$scope.cats = [
-		{ "nom" : "poussins"			},
-		{ "nom" : "poussines"			},
-		{ "nom" : "benjamins"			},
-		{ "nom" : "benjamines"			},
-		{ "nom" : "cadets"				},
-		{ "nom" : "cadettes"			},
-		{ "nom" : "minimes (garcon)"	},
-		{ "nom" : "minimes (fille)"		},
-		{ "nom" : "seniors (garcon)"	},
-		{ "nom" : "seniors (fille)"		},
-		{ "nom" : "dirigeant"			}
-	];*/
 
 	$scope.setPage = function(pageNo) {
 		$scope.currentPage = pageNo;
@@ -408,18 +395,33 @@ App.controller('match_gestion', function( $rootScope, $scope, $http ){
 		console.info( "change: " + $scope.matchs[ index ].id ); // LOG
 		$scope.editData = $scope.matchs[index];
 		var date = new Date( $scope.editData.date );
-		$scope.editData.jour  = date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear();
-		$scope.editData.heure = date.getHours() + ":" + date.getMinutes();
+		/*$scope.editData.jour  = date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear();
+		$scope.editData.heure = date.getHours() + ":" + date.getMinutes();*/
 	}
 	$scope.delete = function ( index )
 	{
-		console.info( "delete: " + $scope.matchs[ index ].id );
+		var r = confirm("Etes vous sur de vouloir supprimer ce match?");
+		if( r == true)
+		{
+			console.info( "delete: " + $scope.matchs[ index ].id );
+			$http({
+				url: 'inc/M_action.php',
+				method: "POST",
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+				data: $.param({match_action : 'del'})
+			})
+			.success(function(response) {
+
+			}).error(function(response) { // optional
+
+			});
+		}
 	}
 
 	$scope.saveEdit = function() {
 
 	}
-	$scope.cancel() {
+	$scope.cancel = function() {
 
 	}
 	function loadData() {
