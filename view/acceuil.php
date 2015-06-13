@@ -1,14 +1,14 @@
 <div class="row" >
 	<div class="col-sm-6">
 		<h2>Bienvenue au club !</h2>
-		<div class="alert alert-info alert-dismissible col-sm-10" role="alert">
+		<!--div class="alert alert-info alert-dismissible col-sm-10" role="alert">
 	  		<button type="button" class="close" data-dismiss="alert">
 	  			<span aria-hidden="true">&times;</span>
 	  			<span class="sr-only">Fermer</span>
 	  		</button>
 		  <strong>Exceptionnel!</strong> Paëla sur place ou à emporter
 		  	<a href="index.php?P=news">Lien de l'évènement</a>
-		</div>
+		</div-->
 	</div>
 	<div class="col-sm-6 hidden-xs" >
 		<img class="col-sm-3 col-sm-offset-8" alt="logo du rhodiabasket" src="img/global/logo-l.png">

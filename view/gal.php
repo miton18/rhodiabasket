@@ -3,7 +3,7 @@
         <div class="col-lg-6">
             <carousel interval="myInterval" >
                 <slide ng-repeat="slide in slides" active="slide.active" on-change="alert(current-index)">
-                    <img ng-src="{{slide.image}}" style="margin:auto; overflow: hidden;height: 55%" ng-click="update_photo($index)">
+                    <img ng-src="{{slide.image}}" style="margin:auto; overflow: hidden" ng-click="update_photo($index)">
                 </slide>
             </carousel>
         </div>
