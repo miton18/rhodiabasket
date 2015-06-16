@@ -2,18 +2,6 @@
 <?php session_start()
 	//session_set_cookie_params( 60 * 60 );
 ?>
-<!--?php
-	require 'inc/lessc.inc.php';
-	try 
-	{
-		lessc::ccompile('style/login.less', 'style/login.css');
-	    lessc::ccompile('style/main.less', 'style/main.css');
-	} 
-	catch (exception $ex) 
-	{
-	    exit('lessc fatal error:'.$ex->getMessage());
-	}
-?-->
 <html data-ng-app="App" lang="fr">
 	<head>
 		<title>rhodiabasket - Site du club</title>
@@ -22,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-theme.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-responsive.min.css">
 		<link rel="stylesheet" type="text/css" href="style/bootstrap-lightbox.min.css">
+		<link rel="stylesheet" type="text/css" href="style/ngDialog.min.css">
 		<link rel="stylesheet" type="text/css" href="style/main.css">
 
 		<meta charset="utf-8">
@@ -158,16 +147,12 @@
 					</div>
 			</footer>
 		</div>
-		<script type="text/javascript" src="jquery.min.js"  >
-		</script>
-		<script type="text/javascript" src="bootstrap.min.js">
-		</script>
-		<script type="text/javascript" src="bootstrap-lightbox.min.js"> 
-		</script>
-		<script type="text/javascript" src="ui-bootstrap-tpls-0.11.0.min.js">
-		</script>		
-		<script type="text/javascript" src="datetime-picker.js" >
-		</script>
+		<script type="text/javascript" src="jquery.min.js"  ></script>
+		<script type="text/javascript" src="bootstrap.min.js"></script>
+		<script type="text/javascript" src="bootstrap-lightbox.min.js"></script>
+		<script type="text/javascript" src="datetime-picker.js" ></script>
+		<script type="text/javascript" src="ui-bootstrap.min.js" ></script>
+		<script type="text/javascript" src="ngDialog.min.js" ></script>
 		<!--  CONTROLLEURS  -->
 		<script type="text/javascript" src="main.js">
 		</script>	

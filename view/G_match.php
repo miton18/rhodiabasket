@@ -4,6 +4,9 @@
 		<a href="index.php?P=gestion" class="btn btn-warning btn-large">
 			<i class="icon-arrow-left"></i> Retour à la liste des membres
 		</a>
+        <a class="btn btn-sm btn-success"	href="#modal-match" ng-click="create()" data-toggle="modal" >
+			<span class="glyphicon glyphicon-plus-sign"></span> Ajout de matchs
+		</a>
 	</div>
 	<hr>
 	<div class="row">
@@ -76,7 +79,7 @@
 		</table>
 	</div>
 	<!-- FORMULAIRE LIGHTBOX -->
-	<div class="modal fade" id="modalForm" role="dialog">
+	<div class="modal fade" id="modal-match" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form method="POST" ng-submit="saveEdit()" class="form-horizontal">

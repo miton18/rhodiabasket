@@ -1,6 +1,5 @@
 var App = angular.module('App', ['ui.bootstrap', 'ui.bootstrap.datetimepicker'] );
 
-
 var Cats = [
 		{ "nom" : "poussins"			},
 		{ "nom" : "poussines"			},
@@ -14,7 +13,6 @@ var Cats = [
 		{ "nom" : "seniors (fille)"		},
 		{ "nom" : "dirigeant"			}
 	];
-
 
 // CONTROLEUR NAVIGATION
 App.controller('navControl', function( $scope )
@@ -308,8 +306,9 @@ App.controller('mapi', function( $scope )
 // CONTROLLER VIEW GESTION MEMBRES
 App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 {
+    $scope.cats = Cats;
 	function loadData(){
-		$http.get('inc/json.php').success( function(data){
+		$http.get('inc/json.php').success( function (data) {
 			$scope.list 			= data;
 			$scope.currentPage 		= 1; //current page
 			$scope.entryLimit 		= 5; //max no of items to display in a page
@@ -318,13 +317,12 @@ App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 		});
 	}
 	loadData(); // initialise les données
-	$scope.cats = Cats;
 
-	$scope.setPage = function(pageNo) {
+	$scope.setPage = function (pageNo) {
 		$scope.currentPage = pageNo;
 	};
-	$scope.filter = function() {
-		$timeout(function() {
+	$scope.filter = function () {
+		$timeout( function () {
 			$scope.filteredItems = $scope.filtered.length;
 		}, 1);
 	 };
@@ -333,7 +331,7 @@ App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 	 	$scope.reverse = !$scope.reverse;
 	};
 	//
-	$scope.change = function( id ){
+	$scope.change = function (id) {
 		$scope.modCat = ($scope.list[ id ])[ 'categorie'];
 		$scope.modNom = ($scope.list[ id ])[ 'nom'		];
 		$scope.modPre = ($scope.list[ id ])[ 'prenom'	];
@@ -344,7 +342,7 @@ App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 		$scope.modId  = ($scope.list[ id ])[ 'ID'		];
 		$scope.action = "Modification";
 	};
-	$scope.create = function(){
+	$scope.create = function ()   {
 		$scope.modCat = "";
 		$scope.modNom = "";
 		$scope.modPre = "";
@@ -355,8 +353,8 @@ App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 		$scope.modId  = "-1";
 		$scope.action = "Création";
 	};
-	$scope.delete = function( id )
-	{
+	$scope.delete = function (id) {
+
 		$http.get('inc/G_action.php?del=' + id )
 		.success( function(result)
 		{
@@ -367,16 +365,15 @@ App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 		{
 			alert('une erreur est survenue sur l\'action demandée.');
 		});
-	}
+	};
 
-	$scope.refresh_photos = function()
+	$scope.refresh_photos = function ()
 	{
-		$http.get('inc/galerie.php').success( function(data){
+		$http.get('inc/galerie.php').success( function (data) {
 			$scope.message 			= data;
 			alert(data);
 		})
-		.error( function()
-		{
+		.error( function () {
 			console.log("erreur de rechargement de la galerie");
 		});
 	}
@@ -386,45 +383,8 @@ App.controller('gestion', function( $rootScope, $scope, $http, $timeout )
 App.controller('match_gestion', function( $rootScope, $scope, $http ){
 
 	$scope.cats = Cats;
-	console.log($scope.cats );
 
-	loadData();
-
-	$scope.change = function ( index )
-	{
-		console.info( "change: " + $scope.matchs[ index ].id ); // LOG
-		$scope.editData = $scope.matchs[index];
-		var date = new Date( $scope.editData.date );
-		/*$scope.editData.jour  = date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear();
-		$scope.editData.heure = date.getHours() + ":" + date.getMinutes();*/
-	}
-	$scope.delete = function ( index )
-	{
-		var r = confirm("Etes vous sur de vouloir supprimer ce match?");
-		if( r == true)
-		{
-			console.info( "delete: " + $scope.matchs[ index ].id );
-			$http({
-				url: 'inc/M_action.php',
-				method: "POST",
-				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-				data: $.param({match_action : 'del'})
-			})
-			.success(function(response) {
-
-			}).error(function(response) { // optional
-
-			});
-		}
-	}
-
-	$scope.saveEdit = function() {
-
-	}
-	$scope.cancel = function() {
-
-	}
-	function loadData() {
+    function loadData() {
 		$http({
 			url: 'inc/M_action.php',
 			method: "POST",
@@ -442,7 +402,44 @@ App.controller('match_gestion', function( $rootScope, $scope, $http ){
 				console.error(response);
 		});
 	}
+	loadData();
 
+    $scope.create   = function() {
+
+    }
+	$scope.change   = function ( index ) {
+
+		console.info( "change: " + $scope.matchs[ index ].id ); // LOG
+		$scope.editData = $scope.matchs[index];
+		var date = new Date( $scope.editData.date );
+		/*$scope.editData.jour  = date.getDay() + "-" + date.getMonth() + "-" + date.getFullYear();
+		$scope.editData.heure = date.getHours() + ":" + date.getMinutes();*/
+	}
+	$scope.delete   = function ( index ) {
+
+		var r = confirm("Etes vous sur de vouloir supprimer ce match?");
+		if( r == true)
+		{
+			console.info( "delete: " + $scope.matchs[ index ].id );
+			$http({
+				url: 'inc/M_action.php',
+				method: "POST",
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+				data: $.param({match_action : 'del'})
+			})
+			.success(function(response) {
+
+			}).error(function(response) { // optional
+
+			});
+		}
+	}
+	$scope.saveEdit = function() {
+
+	}
+	$scope.cancel   = function() {
+
+	}
 
 	$scope.isOpen = false;
 
